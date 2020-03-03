@@ -24,3 +24,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+---
+Note: Merges are now protected.
