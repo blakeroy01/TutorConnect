@@ -14,6 +14,28 @@ html, body{
 
 /*********************************************************/
 /*********************************************************/
+/*Header Container*/
+/*********************************************************/
+/*********************************************************/
+.header-container{
+	height: 120px;
+	width: 100%;
+	position: relative;
+	display: inline-block;
+	background-color: #faf5ed;
+	text-align: center;
+	font-size: 4vw;
+}
+.logo-container{
+	height:90px;
+	margin-top: 40;
+	padding-top: 20px;
+	align-content:center;
+}
+
+
+/*********************************************************/
+/*********************************************************/
 /*Body*/
 /*********************************************************/
 /*********************************************************/
@@ -22,8 +44,8 @@ html, body{
 .body-container{
 	width:100%;
 	height:1500px;
-	position:relative;
-	background-image: url("tutor_landing_pic.jpg");
+	position:absolute;
+	background-image: url("tutor_landing_pic_reversed.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -50,42 +72,42 @@ html, body{
 	position:relative;
 	float:right;
 	margin:0;
-    padding:3% 0;
+  padding:3% 0;
 }
 
 /*defines vertical constraints for landing page main text: TutorConnect;*/
 .banner{
+	display:block;
 	padding:5% 0 25% 0;
 	color:#faf5ed;
 	text-align: center;
-	display:block;
 	font-size: 11vw;
 	margin:0;
 	background: rgb(70,70,70);
-	background: linear-gradient(0deg, rgba(70,70,70,0.6923144257703081) 11%, rgba(255,255,255,0) 78%);
+	background: linear-gradient(0deg, rgba(70,70,70,0.6923144257703081) 11%, rgba(255,255,255,0) 78%);*/
 }
 
 
 /*********************************************************/
-					/*Slideshow*/
+					/*Slideshow*/ /*IGNORE* THIS IS FOR LATER USE*/
 /*********************************************************/
 .churchSlides{
 	display:none;
 	position:relative;
-	
+
 }
 
 .slideshow-container{
- 	
+
 	position:relative;
 	margin:auto;
-		
+
 }
 .slideshow-container img{
 	width:100%;
 	height:700px;
 	object-fit:cover;
-	
+
 }
 .slideshow-texts{
 	position:absolute;
@@ -106,12 +128,12 @@ html, body{
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -134,35 +156,35 @@ html, body{
 	position: absolute;
 	width: 100%;
 	z-index: -1;
-}	
+}
 
 /*defines navigation content (not container, see above)*/
 .nav-contents {
 	padding: 0;
 	margin: 0;
     text-align: right;
-    width:100%;
 }
 
 /*defines individual navigation tabs*/
 .nav-contents a {
 	padding: 10px;
 	margin: 0;
-	font-size: calc(8px + .9vw); /*calc method calculates static size (px) + responsive size (vw) to determine min and max font-size*/
+	font-size: calc(10px + .9vw); /*calc method calculates static size (px) + responsive size (vw) to determine min and max font-size*/
 	font-weight: bold;
 	color: #ffffff;
 	transition: 0.2s;
 }
 
 .download-app{
+	display: block;
 	font: verdana;
 	font-weight:bold;
 	font-size: calc(10px + .9vw);;
 	text-align: center;
-	float:right;
-	padding:0%;
-	margin-left:3%;
-	margin-right:3%;
+	float:center;
+	padding:1%;
+	margin-left:35%;
+	margin-right: 35%;
 	background-color:#faf5ed; /*lighter creme color*/
 	border-radius:10px;
 }
@@ -182,8 +204,9 @@ html, body{
 
 .nav-contents a:hover {
 /*defines style for background PROceeding "landing-container"*/
-	color:#8b233a; /*blood red color*/
+	color:#ff7369; /*salmon color*/
 }
+
 .contents{
 	/*background-color:#f2e7d0; /*Creme Colour*/
 	/*background-color:#d5e0fe; /*light lavender*/
@@ -217,20 +240,22 @@ html, body{
 	margin: 0 20%;
 	padding: 5% 0;
 }
+/*manipulates the 3 columns: step 1, step 2, step 3. And its contents.*/
 .column{
 	float:left;
-	color:#ff7369;
+	color:#ff7369; /*salmon color*/
 	text-align: center;
+	font-size: calc(8px + .9vw);
 }
 .left{
 	width:33.33%;
 }
 .right{
-	color:#2A2B2DFF;
+	color:#2A2B2DFF; /*dark color*/
 	width:33.33%;
 }
 .middle{
-	color:#faf5ed;
+	color:#faf5ed; /*creme colour*/
 	width:33.33%;
 }
 .row:after {
@@ -246,8 +271,6 @@ html, body{
 /*defines size of "services-container"*/
 .services-container{
 	background-color:#faf5ed; /*creme color*/
-	/*background-color:#8b233a; /*blood red color*/
-	/*background-color:#656371; /*dark color*/ 
 	z-index:1;
 	text-align: center;
 	height:600px;
@@ -290,51 +313,26 @@ html, body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*********************************************************/
 /*********************************************************/
-/*footer*/
+/*Footer*/
 /*********************************************************/
 /*********************************************************/
 
 /*defines styles of "footer-container", assigns red bg image*/
 .footer-container{
-	background-color:#2A2B2DFF; /*dark color*/ 
 	position: absolute;
 	left:0;
 	width:100%;
-	height: calc(230px + 1.5vw);
-	background-image: url("images/assets/footer-bg.png");
+	height: calc(200px + 1.5vw);
+	/*background-image: url("images/assets/footer-bg.png");*/
+	background-color: #2A2B2DFF; /*dark color*/
 	background-size: calc(1600px + 8%);
 	background-repeat: no-repeat;
 	z-index:-1;
 	background-position:bottom;
 }
+
 
 /*defines size of "top-footer" container*/
 .top-footer {
@@ -400,11 +398,125 @@ html, body{
 }
 
 
-
-
-
-
 a{
 	text-decoration: none;
 	color:#000;
 }
+
+
+/*********************************************************/
+/*********************************************************/
+/*Login Form*/
+/*********************************************************/
+/*********************************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+	height: 800px;
+  	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	z-index: -1000;
+}
+.form {
+	position: relative;
+	height: 400px;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	top: 40px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #faf5ed;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+.form button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #ff7369;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+	background: #902c19;
+}
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+.form .message a {
+	color: #2A2B2DFF; /*dark color*/
+	text-decoration: none;
+}
+.form .register-form {
+ 	display: none;
+}
+.container {
+	position: relative;
+	z-index: 1;
+	max-width: 300px;
+	margin: 0 auto;
+}
+.container:before, .container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.container .info {
+	margin: 50px auto;
+	text-align: center;
+}
+.container .info h1 {
+	margin: 0 0 15px;
+	padding: 0;
+	font-size: 36px;
+	font-weight: 300;
+	color: #1a1a1a;
+}
+.container .info span {
+	color: #4d4d4d;
+	font-size: 12px;
+}
+.container .info span a {
+	color: #000000;
+	text-decoration: none;
+}
+.container .info span .fa {
+ 	color: #EF3B3A;
+}
+/*body {
+  background: #76b852; /* fallback for old browsers don't use this you idiot lmfao
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F); /*fuck this one honestly holy shit fuck
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}*/
+
+

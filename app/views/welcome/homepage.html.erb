@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link type="text/css" rel="stylesheet" href="home.css"/>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src = "home.js"></script>
     <script>
-    $(document).ready(function(){
-        $('body').hide();
-        $('body').fadeIn(1400);
+      $(document).ready(function(){
+          $('body').hide();
+          $('body').fadeIn(1400);
 
-        $('.landing-container , .contents').hide();
-        $('.landing-container , .contents').delay(600).fadeIn(2000);
+          $('.landing-container , .contents').hide();
+          $('.landing-container , .contents').delay(600).fadeIn(2000);
 
-        $("a[href^='#']").click(function(e) {
-            e.preventDefault();
+          $("a[href^='#']").click(function(e) {
+              e.preventDefault();
 
-            var position = $($(this).attr("href")).offset().top;
+              var position = $($(this).attr("href")).offset().top;
 
-            $("body, html").animate({
-                scrollTop: position
-            },1000 );
-        });
-        $(window).on('beforeunload', function() {
-   $(window).scrollTop(0);
-    });
-    });
-</script>
+              $("body, html").animate({
+                  scrollTop: position
+              },1000 );
+          });
+          $(window).on('beforeunload', function() {
+            $(window).scrollTop(0);
+      });
+      });
+    </script>
 </head>
 <body>
     <!-- ********************           Body             **********************-->
@@ -36,28 +34,28 @@
         <!-- *********************           Landing container       ***********************-->
         <div class="landing-container">
             <div class="nav-container">
-                <a href="home.html"><img src="Logo" alt="Pic of the Holy Homies"></a>
+                <a href="homepage.html.erb"><img src="Logo" alt="Pic of the Holy Homies"></a>
                 <div class="nav-bar">
                     <div class="nav-contents">
                         <!--<a href="home.html">HOME</a>-->
-                        <a href="#story"><span class ="creme-color">LOGIN</span></a>
-                        <a href="#footer"><span class="creme-color">SIGN UP</span></a>
-
+                        <!--<a href="#login"><span class ="creme-color">LOGIN</span></a>-->
+                        <%= link_to "Login", "login.html" %>  
+                        <%= link_to "Sign Up lil bitch", "signup.html"%>
+                        <!--<a href="#sign-up"><span class="creme-color">SIGN UP</span></a>-->
                     </div>
-                    <div class="download-app">
-                        <a href="#download">
-                            <span class="chalkboard-color">DOWNLOAD</span>
-                            <span class ="salmon-color">THE</span>
-                            <span class ="salmon-color">APP</span>
-                        </a>
-                    </div>
-
                 </div>
             </div>
             <div class="banner">
-                <span class = "salmon-color">T</span>utor
-                <span class ="chalkboard-color">C</span>onnect
+                <span class = "salmon-color">T</span>utor<span class ="chalkboard-color">C</span>onnect
+                <div class="download-app">
+                    <a href="#download">
+                        <span class="chalkboard-color">DOWNLOAD</span>
+                        <span class ="salmon-color">THE</span>
+                        <span class ="salmon-color">APP</span>
+                    </a>
+                </div>
             </div>
+
         </div>
         <div class="contents">
             <!-- *********************           Story container       ***********************-->
@@ -87,7 +85,7 @@
             <!-- *********************           Services container       ***********************-->
             <div class="services-container">
                 <h1>Step 4</h1>
-                <h2>Choose your tutor!</h3>
+                <h2>Choose your tutor!</h2>
 
             </div>
 
@@ -96,31 +94,9 @@
                 <img class="bg-img" src="images/assets/vid-bg.png" alt="Jeremiah was also here"/>
                 <div class="vid-content">
                     <img src="images/assets/vid-placeholder.png" alt="I died for your Sins"/>
-                    <p>s</p>
                 </div>
             </div>
-
             <!-- *********************           Footer container       ***********************-->
-            <footer class="footer-container" id ="footer">
-                <div class="top-footer">
-                    <div class="sm-container">
-                        <a href="https://www.facebook.com/FurryMate/"><img class="footer-icon" src="fb-sm.png" alt="facebook"/></a>                    <!--facebook link-->
-                        <a href="https://www.youtube.com/watch?v=Sc_GJMOtblM"><img class="footer-icon" src="yt-sm.png" alt="youtube"/></a>                    <!--youtube link-->
-                    </div>
-                    <div class="sub-container">
-                        <p>Subscribe to our Jewsletter</p>
-                        <form>
-                            <input type="text" placeholder="Pray4NY@godmail.com"/>
-                        </form>
-                    </div>
-                </div>
-                <div class="bottom-footer">
-                    <div class="contact">
-                        <pre>57-04 Roosevelt Ave, Woodside, NY 11377</pre></br>
-                        <pre>(917) 291-9158          FLC@ChurchNY.com</pre>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
 </body>

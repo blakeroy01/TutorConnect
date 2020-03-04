@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src = "home.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('body').hide();
+        $('body').fadeIn(1400);
+
+        $('.landing-container , .contents').hide();
+        $('.landing-container , .contents').delay(600).fadeIn(2000);
+
+        $("a[href^='#']").click(function(e) {
+            e.preventDefault();
+
+            var position = $($(this).attr("href")).offset().top;
+
+            $("body, html").animate({
+                scrollTop: position
+            },1000 );
+        });
+        $(window).on('beforeunload', function() {
+          $(window).scrollTop(0);
+    });
+    });
+    $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+  </script>
+  <body>
+    <div class = "login-page">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="name"/>
+          <input type="password" placeholder="password"/>
+          <input type="text" placeholder="email address"/>
+          <button>create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <a href="#">Create an Account</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

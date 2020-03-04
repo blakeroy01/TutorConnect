@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TutorConnect</title>
+    <title>Web8</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'homepage', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% unless action_name == "landing" %>
+       <%= render 'layouts/header' %>
+    <% end %>
   </head>
-
   <body>
     <%= yield %>
+    <% unless action_name == "landing" %>
+       <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
