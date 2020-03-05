@@ -4,6 +4,21 @@
     <title>Web8</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'homepage', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "home.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('body').hide();
+        $('body').fadeIn(1400);
+
+        $('.landing-container , .contents').hide();
+        $('.landing-container , .contents').delay(600).fadeIn(2000);
+
+      });
+      $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+    </script>
     <% unless action_name == "landing" %>
        <%= render 'layouts/header' %>
     <% end %>
