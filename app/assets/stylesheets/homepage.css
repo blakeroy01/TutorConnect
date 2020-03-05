@@ -406,7 +406,7 @@ a{
 
 /*********************************************************/
 /*********************************************************/
-/*Login Form*/
+/*Login/Register Form*/
 /*********************************************************/
 /*********************************************************/
 
@@ -420,6 +420,15 @@ a{
   	-o-background-size: cover;
   	background-size: cover;
   	z-index: -1000;
+}
+.register-page {
+	height: 1000px;
+	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: -1000;
 }
 .form {
 	position: relative;
