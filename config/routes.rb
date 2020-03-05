@@ -5,6 +5,5 @@ Rails.application.routes.draw do
 
 	get '/login', to: 'layouts#login' 
 	get '/register', to: 'layouts#register'
-	get '/login/register', to: 'layouts#register'
 	
 end 

@@ -4,6 +4,7 @@
     <title>Web8</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'homepage', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%-# script for fade-%>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src = "home.js"></script>
     <script>
@@ -19,12 +20,14 @@
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
       });
     </script>
-    <% unless action_name == "landing" %>
+    <%-# To exclude header from landing page -%>
+    <% unless action_name == "landing" || action_name == "login" || action_name == "register" %>
        <%= render 'layouts/header' %>
     <% end %>
   </head>
   <body>
     <%= yield %>
+    <%-# To exclude footer from landing page -%>
     <% unless action_name == "landing" %>
        <%= render 'layouts/footer' %>
     <% end %>
