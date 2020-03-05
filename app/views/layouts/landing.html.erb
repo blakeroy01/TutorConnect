@@ -3,21 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src = "home.js"></script>
-    <script>
-      $(document).ready(function(){
-          $('body').hide();
-          $('body').fadeIn(1400);
-
-          $('.landing-container , .contents').hide();
-          $('.landing-container , .contents').delay(600).fadeIn(2000);
-          
-          $(window).on('beforeunload', function() {
-            $(window).scrollTop(0);
-        });
-      });
-    </script>
 </head>
 <body>
     <!-- ********************           Body             **********************-->
@@ -25,7 +10,8 @@
         <!-- *********************           Landing container       ***********************-->
         <div class="landing-container">
             <div class="nav-container">
-                <a href="homepage.html.erb"><img src="Logo" alt="Pic of the Holy Homies"></a>
+                <!--<%= link_to image_tag("pepe.png"), root_path %>-->
+                <a href="landing.html.erb"><img src="pepe.png" alt="Logo Placeholder"></a>
                 <div class="nav-bar">
                     <div class="nav-contents">
                         <!--<a href="home.html">HOME</a>-->

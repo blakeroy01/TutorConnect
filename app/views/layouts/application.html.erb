@@ -20,14 +20,14 @@
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
       });
     </script>
-    <%-# To exclude header from landing page -%>
+    <%-# To exclude header from landing page, login page, and register page -%>
     <% unless action_name == "landing" || action_name == "login" || action_name == "register" %>
        <%= render 'layouts/header' %>
     <% end %>
   </head>
   <body>
     <%= yield %>
-    <%-# To exclude footer from landing page -%>
+    <%-# To exclude footer from landing page, login page, and register page  -%>
     <% unless action_name == "landing" %>
        <%= render 'layouts/footer' %>
     <% end %>
