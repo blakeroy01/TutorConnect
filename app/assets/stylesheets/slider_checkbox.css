@@ -1,3 +1,7 @@
+.checkbox-container{
+  height: 40px;
+  position:relative;
+}
 .slider {
   border: none;
   position: relative;
@@ -5,7 +9,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 125px;
+  width: 360px;
 }
 
 .slider-checkbox {
@@ -37,34 +41,35 @@
   font-weight: bold;
   height: 30px;
   line-height: 30px;
-  padding: 0;
+  padding-left:35px;
   width: 50%;
 }
 
 .slider-inner:before {
-  background-color: #66bb6a;
+  background-color: #20494F;
   color: #fff;
-  content: "ACCEPTED";
+  content: "I am signing in as a Tutor";
   padding-left: .75em;
+  text-align: left;
 }
 
 .slider-inner:after {
-  background-color: #eee;
-  color: #666;
-  content: "DECLINED";
+  background-color: #FFFFFF;
+  color: #20494F;
+  content: "Click to sign in as a Tutor";
   padding-right: .75em;
-  text-align: right;
+  text-align: left;
 }
 
 .slider-circle {
-  background-color: #66bb6a;
+  background-color: #20494F;
   border: 2px solid #666;
   border-radius: 20px;
   bottom: 0;
   display: block;
   margin: 5px;
   position: absolute;
-  right: 91px;
+  right: 325px;
   top: 0;
   transition: all 0.3s ease-in 0s; 
   width: 20px;
