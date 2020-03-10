@@ -15,6 +15,17 @@ ActiveRecord::Schema.define(version: 20200226023000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "Chat", id: false, force: :cascade do |t|
+    t.string "chat", array: true
+  end
+
+  create_table "User", force: :cascade do |t|
+    t.string "password_digest", array: true
+    t.integer "is_tutor"
+    t.string "email", array: true
+    t.string "username", null: false, array: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
