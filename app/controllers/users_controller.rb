@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def index
+  def landing
 
   end
 

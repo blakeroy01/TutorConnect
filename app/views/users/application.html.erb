@@ -23,14 +23,14 @@
     </script>
     <%-# To exclude header from landing page, login page, and register page -%>
     <% unless action_name == "landing" || action_name == "login" || action_name == "register" %>
-       <%= render 'layouts/header' %>
+       <%= render 'users/header' %>
     <% end %>
   </head>
   <body>
     <%= yield %>
     <%-# To exclude footer from landing page, login page, and register page  -%>
     <% unless action_name == "landing" %>
-       <%= render 'layouts/footer' %>
+       <%= render 'users/footer' %>
     <% end %>
   </body>
 </html>

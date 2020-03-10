@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="global.css">  
+  <body>
+    <div class = "login-page">
+      <div class="form2">
+        <div class = "login-logo">
+          <%= link_to image_tag("logoRemastered2.png"), root_path %>
+        </div>
+        <div class = "checkbox-container">
+          <div class="slider">
+            <input type="checkbox" name="slider" class="slider-checkbox" id="sliderSwitch">
+            <label class="slider-label" for="sliderSwitch">
+              <span class="slider-inner"></span>
+              <span class="slider-circle"></span>
+            </label>
+          </div>
+        </div>
+        <form class="login-form">
+          <input type="text" placeholder="username"/>
+          <input type="password" placeholder="password"/>
+          <button>login</button>
+          <p class="message">Not registered? <%= link_to "Create an Account", "register.html"%>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
