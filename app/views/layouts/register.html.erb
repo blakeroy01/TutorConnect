@@ -9,13 +9,12 @@
         <div class = "login-logo">
           <%= link_to image_tag("logoRemastered2.png"), root_path %>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="first name"/>
-          <input type="text" placeholder="last name"/>
-          <input type="text" placeholder="username"/>
-          <input type="text" placeholder="email address"/>
-          <input type="password" placeholder="password"/>
-          <input type="confirm password" placeholder="confirm password"/>
+        <form action="/users" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+          <input type="username" name="user[username]" placeholder="username"/>
+          <input type="email" name="user[email]" placeholder="email address"/>
+          <input type="password" name="user[password]" placeholder="password"/>
+          <input type="confirm password" name="user[password_confirmation]" placeholder="confirm password"/>
           <button>Register</button>
           <p class="message">Already registered? <a href="login.html">Sign In</a></p>
         </form>
