@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="global.css">
-  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src = "home.js"></script>
-  <script>
-    $(document).ready(function(){
-        $('body').hide();
-        $('body').fadeIn(1400);
-
-        $('.landing-container , .contents').hide();
-        $('.landing-container , .contents').delay(600).fadeIn(2000);
-
-        $("a[href^='#']").click(function(e) {
-            e.preventDefault();
-
-            var position = $($(this).attr("href")).offset().top;
-
-            $("body, html").animate({
-                scrollTop: position
-            },1000 );
-        });
-        $(window).on('beforeunload', function() {
-          $(window).scrollTop(0);
-    });
-    });
-    $('.message a').click(function(){
-    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-  });
-  </script>
   <body>
     <div class = "login-page">
-      <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="name"/>
-          <input type="password" placeholder="password"/>
-          <input type="text" placeholder="email address"/>
-          <button>create</button>
-          <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
+      <div class="form2">
+        <div class = "login-logo">
+          <%= link_to image_tag("logoRemastered2.png"), root_path %>
+        </div>
+        <div class = "checkbox-container">
+          <div class="slider">
+            <input type="checkbox" name="slider" class="slider-checkbox" id="sliderSwitch">
+            <label class="slider-label" for="sliderSwitch">
+              <span class="slider-inner"></span>
+              <span class="slider-circle"></span>
+            </label>
+          </div>
+        </div>
+        <form action="/sessions" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <input type="email" name="login[email]" placeholder="email"/>
+          <input type="password" name="login[password]" placeholder="password"/>
           <button>login</button>
-          <p class="message">Not registered? <a href="#">Create an Account</a></p>
+          <p class="message">Not registered? <%= link_to "Create an Account", "register.html"%>
         </form>
       </div>
     </div>

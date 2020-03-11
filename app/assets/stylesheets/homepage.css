@@ -401,12 +401,14 @@ html, body{
 a{
 	text-decoration: none;
 	color:#000;
+	align-content: center;
+	width: 60%;
 }
 
 
 /*********************************************************/
 /*********************************************************/
-/*Login Form*/
+/*Login/Register Form*/
 /*********************************************************/
 /*********************************************************/
 
@@ -421,15 +423,32 @@ a{
   	background-size: cover;
   	z-index: -1000;
 }
+.login-logo {
+	height:50px;
+	display: contents;
+}
+.register-page {
+	height: 1000px;
+	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: -1000;
+}
+form{
+	display: block;
+	margin-top: 20px;
+}
 .form {
 	position: relative;
-	height: 400px;
+	height: 500px;
 	z-index: 1;
 	background: #FFFFFF;
 	max-width: 360px;
 	margin: 0 auto 100px;
 	padding: 45px;
-	padding-top: 100px;
+	padding-top: 60px;
 	padding-bottom: 100px;
 	top: 40px;
 	text-align: center;
@@ -508,6 +527,66 @@ a{
 .container .info span .fa {
  	color: #EF3B3A;
 }
+
+form{
+	display: block;
+	margin-top: 20px;
+}
+.form2 {
+	position: relative;
+	height: 350px;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	padding-top: 60px;
+	padding-bottom: 100px;
+	top: 40px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form2 input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #faf5ed;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+.form2 button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #ff7369;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+.form2 button:hover,.form2 button:active,.form2 button:focus {
+	background: #902c19;
+}
+.form2 .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+.form2 .message a {
+	color: #2A2B2DFF; /*dark color*/
+	text-decoration: none;
+}
+.form2 .register-form {
+ 	display: none;
+}
+
 /*body {
   background: #76b852; /* fallback for old browsers don't use this you idiot lmfao
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
