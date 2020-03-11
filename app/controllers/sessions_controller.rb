@@ -5,13 +5,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/dashboard'
     else
-      render json: {
-        status: 401,
-        error: "Unauthorized user"
-      }
+      show
     end
   end
 
+  def show
+    render 'users/invalid'
+  end
 
   private
   def login_params
