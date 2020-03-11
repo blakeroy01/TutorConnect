@@ -2,7 +2,7 @@
 <html>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="global.css">  
+  <link rel="stylesheet" type="text/css" href="global.css">
   <body>
     <div class = "login-page">
       <div class="form2">
@@ -18,9 +18,10 @@
             </label>
           </div>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
+        <form action="/sessions" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <input type="email" name="login[email]" placeholder="email"/>
+          <input type="password" name="login[password]" placeholder="password"/>
           <button>login</button>
           <p class="message">Not registered? <%= link_to "Create an Account", "register.html"%>
         </form>

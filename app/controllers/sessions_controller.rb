@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
   def create
-    user = user.find_by(email:login_params[:email])
+    user = User.find_by(email:login_params[:email])
     if user && user.authenticate(login_params[:password])
       session[:user_id] = user.id
       redirect_to '/dashboard'
     else
-      flash[:login_errors] = ['invalid credentials']
-      redirect_to '/'
+      render json: {
+        status: 401,
+        error: "Unauthorized user"
+      }
     end
   end
 
