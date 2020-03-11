@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20200226023000) do
     t.string "is_tutor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", array: true
   end
 
 end
