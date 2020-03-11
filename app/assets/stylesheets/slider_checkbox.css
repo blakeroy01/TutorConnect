@@ -48,7 +48,7 @@
 .slider-inner:before {
   background-color: #20494F;
   color: #fff;
-  content: "I am signing in as a Tutor";
+  content: "Register as a Tutor (Click -> Student)";
   padding-left: .75em;
   text-align: left;
 }
@@ -56,7 +56,7 @@
 .slider-inner:after {
   background-color: #FFFFFF;
   color: #ff7369;;
-  content: "Click here to sign in as a Tutor";
+  content: "Register as a Student (Click -> Tutor)";
   padding-right: .75em;
   text-align: left;
 }
@@ -71,7 +71,7 @@
   position: absolute;
   right: 325px;
   top: 0;
-  transition: all 0.3s ease-in 0s; 
+  transition: all 0.3s ease-in 0s;
   width: 20px;
 }
 
@@ -81,5 +81,5 @@
 
 .slider-checkbox:checked + .slider-label .slider-circle {
   background-color: #ff7369;;
-  right: 0; 
+  right: 0;
 }

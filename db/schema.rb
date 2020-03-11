@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200226023000) do
+ActiveRecord::Schema.define(version: 20200311100624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "Chat", id: false, force: :cascade do |t|
-    t.string "chat", array: true
   end
 
   create_table "User", force: :cascade do |t|
@@ -29,11 +28,13 @@ ActiveRecord::Schema.define(version: 20200226023000) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "is_tutor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "bio"
+    t.boolean "is_tutor"
+    t.serial "chat_id", null: false
+    t.string "subjects", array: true
   end
 
 end

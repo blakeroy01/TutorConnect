@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :bio
-  has_one :bio
+  attr_accessor :bio, :is_tutor
   has_secure_password
-
   validates_presence_of :email
   validates_uniqueness_of :email
 
@@ -13,9 +11,4 @@ class User < ApplicationRecord
   def self.current=(user)
     Thread.current[:user] = user
   end
-
-  def initialize(attributes={})
-  super
-  @bio ||= "Enter a bio"
-end
 end

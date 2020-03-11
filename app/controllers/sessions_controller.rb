@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by(email:login_params[:email])
-    if user && user.authenticate(login_params[:password])
-      session[:user_id] = user.id
-      redirect_to '/dashboard'
+    if login_params[:is_tutor] == true
+      login = Tutor.find_by(email:login_params[:email])
+    else
+      login = User.find_by(email:login_params[:email])
+    end
+    if login && login.authenticate(login_params[:password])
+      session[:user_id] = login.id
+      redirect_to "/dashboard#{login_params[:is_tutor]}"
     else
       show
     end
@@ -11,6 +15,11 @@ class SessionsController < ApplicationController
 
   def show
     render 'users/invalid'
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, notice: 'Logged out!'
   end
 
   private
