@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   def create
-      user = User.new(user_params)
-    if user.save
-      session[:user_id] = user.id
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
-      flash[:register_errors] = @current_user.errors.full_messages
+      render 'users/invalid'
     end
   end
 

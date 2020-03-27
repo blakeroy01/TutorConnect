@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :bio, :is_tutor
+  attribute :is_tutor, :boolean, default: false
   has_secure_password
   validates_presence_of :email
   validates_uniqueness_of :email

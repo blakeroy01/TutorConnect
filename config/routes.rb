@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 	get '/pre_dashboardtrue' => 'dashboard#pre_index_tutor'
 	post '/dashboard_update_bio' => 'dashboard#update_bio'
 	post '/dashboard_update_bio_subjects' => 'dashboard#update_bio_subjects'
-	 get 'logout', to: 'sessions#destroy', as: 'logout'  
+	get 'logout', to: 'sessions#destroy', as: 'logout'  
 
 end

@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(version: 20200311100624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "Chat", id: false, force: :cascade do |t|
-  end
-
   create_table "User", force: :cascade do |t|
     t.string "password_digest", array: true
     t.integer "is_tutor"
@@ -32,9 +29,10 @@ ActiveRecord::Schema.define(version: 20200311100624) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "bio"
-    t.boolean "is_tutor"
+    t.string "is_tutor", limit: 5
     t.serial "chat_id", null: false
     t.string "subjects", array: true
+    t.binary "profile_picture"
   end
 
 end

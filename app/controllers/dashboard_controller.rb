@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
 
   def update_bio_subjects
     current_user.update_attributes(bio: params[:user][:bio], subjects:params[:user][:subjects])
-    index
+    redirect_to '/dashboard'
   end
 
   private
