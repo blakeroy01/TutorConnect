@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200327202733) do
+ActiveRecord::Schema.define(version: 20200402004544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "messages_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "tutor_id"
+    t.integer "student_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.time "time_sent"
+    t.string "message"
+    t.integer "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -24,6 +40,8 @@ ActiveRecord::Schema.define(version: 20200327202733) do
     t.string "is_tutor"
     t.string "bio"
     t.string "subject"
+    t.integer "conversation_ids", array: true
+    t.integer "request_id", array: true
   end
 
 end

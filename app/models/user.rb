@@ -11,4 +11,13 @@ class User < ApplicationRecord
   def self.current=(user)
     Thread.current[:user] = user
   end
+
+  def add_request(request_identifier)
+  if request_id.include?(request_identifier)
+    render 'users/request_overload'
+  else
+    request_id << request_identifier
+    save
+  end
+end
 end
