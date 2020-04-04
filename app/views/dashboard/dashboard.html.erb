@@ -7,7 +7,6 @@
   <body>
     <%= link_to "Log Out", logout_path %>  
     <h1>Welcome to the dashboard.</h1>
-    <h2>Bio:</h2>
-      <%=current_user.bio %>
+    	<%= render 'dashboard/components/bio' %>
   </body>
 </html>
