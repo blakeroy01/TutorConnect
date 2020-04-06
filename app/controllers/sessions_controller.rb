@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = login.id
       redirect_to "/dashboard#{login_params[:is_tutor]}"
     else
-    show
+      redirect_to "/login"
+      flash[:error] = "Incorrect email or password. Please try again."
     end
   end
 
