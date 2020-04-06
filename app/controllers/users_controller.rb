@@ -7,10 +7,16 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      flash[:success] = "Account created"
       session[:user_id] = user.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
-      flash[:register_errors] = 'User exists'
+      redirect_to "/register"
+      if User.exists?
+        flash[:error] = "Account exists. Please login with that account."
+      else
+        flash[:error] = "Account creation error."
+      end
     end
   end
 
@@ -51,4 +57,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor)
     end
-end
+  end

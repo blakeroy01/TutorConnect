@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = login.id
       redirect_to "/dashboard#{login_params[:is_tutor]}"
     else
-      show
+    show
     end
   end
 
