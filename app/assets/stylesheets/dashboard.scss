@@ -1,3 +1,14 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//Defining palate with SCSS variables
+$salmon-color: #ff7369;
+$chalkboard-color: #20494F;
+$dark-color:#2A2B2DFF;
+$creme-color:#faf5ed;
+
+.dashHeader{
+    background-color: $creme-color;
+}
