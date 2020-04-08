@@ -27,6 +27,11 @@
           <input type="confirm password" name="user[password_confirmation]" placeholder="confirm password"/>
           <button>Register</button>
           <p class="message">Already registered? <a href="login.html">Sign In</a></p>
+          
+          <% if flash[:error] %>
+            <div id="error"><%= flash[:error] %></div>
+          <% end %>
+
           <script>
             var count = 1;
             var result = true;
