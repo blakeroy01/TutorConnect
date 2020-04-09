@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'homepage', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'slider_checkbox', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%-# script for fade-%>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src = "home.js"></script>
@@ -25,7 +26,7 @@
   <body>
     <%= yield %>
     <%-# To exclude footer from landing page, login page, and register page  -%>
-    <% unless action_name == "landing" %>
+    <% unless action_name == "landing" || "dashboard" %>
        <%= render 'layouts/footer' %>
     <% end %>
   </body>

@@ -1,7 +1,5 @@
 <div>
-	<div class="picture">
-		<p>picture will be here</p>
-	</div>
+	<%= link_to image_tag("generic-profile-pic.png", class:"profile-pic-container"), root_path %>
 	<p>
 		<%=current_user.bio %>
 	</p>
