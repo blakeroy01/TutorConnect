@@ -8,10 +8,15 @@ $salmon-color: #ff7369;
 $chalkboard-color: #20494F;
 $dark-color:#2A2B2DFF;
 $creme-color:#faf5ed;
+$lightblue-color: rgb(62, 158, 173);
+
+body{
+    background-color: $creme-color;
+}
 
 //Header component classes
 .dashHeader{
-    background-color: $creme-color;
+    background-color: $lightblue-color;
 }
 
 
