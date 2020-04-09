@@ -1,5 +1,7 @@
 <div>
-	<%= link_to image_tag("generic-profile-pic.png", class:"profile-pic-container"), root_path %>
+	<div class = "profile-card">
+		<%= link_to image_tag("generic-profile-pic.png", class:"profile-pic-container"), root_path %>
+	</div>	
 	<p>
 		<%=current_user.bio %>
 	</p>

@@ -13,8 +13,21 @@
 
 	</head>
 	<body>
-		<%= render 'dashboard/components/dash_header.html.erb' %>
-		<h1>Welcome to the dashboard.</h1>
-		<%= render 'dashboard/components/bio' %>
+		<div class = "container">
+			<%= render 'dashboard/components/dash_header.html.erb' %>
+		</div>
+		<div class = "container">
+			<div class="row">
+				<div class = "col-md">
+					<%= render 'dashboard/components/bio' %>
+				</div>
+				<div class = "col-md bg-success">
+					<%= render 'dashboard/components/schedule' %>
+				</div>
+				<div class = "col-md bg-danger">
+					<%= render 'dashboard/components/chat' %>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
