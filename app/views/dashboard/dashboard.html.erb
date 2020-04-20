@@ -13,20 +13,25 @@
 
 	</head>
 	<body>
-		<div class = "container">
+		<div class = "container-fullwidth">
 			<%= render 'dashboard/components/dash_header.html.erb' %>
 		</div>
 		<div class = "container">
 			<div class="row">
-				<div class = "col-md">
+				<div class = "col-12 col-md-4 order-2 order-md-1">
 					<div class = "card">
 						<%= render 'dashboard/components/bio' %>
 					</div>					
 				</div>
-				<div class = "col-md bg-success">
+
+				<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
+				<% unless current_user.is_tutor==="false" %>
+				<div class = "col-12 col-md-3 order-3 order-md-2 bg-success">
 					<%= render 'dashboard/components/schedule' %>
 				</div>
-				<div class = "col-md bg-danger">
+				<% end %>
+
+				<div class = "col-12 col-md-5 order-1 order-md-3 bg-danger">
 					<%= render 'dashboard/components/chat' %>
 				</div>
 			</div>
