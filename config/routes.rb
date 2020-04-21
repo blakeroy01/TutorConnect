@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 	resources :layouts
-	resources :users, only: [:create]
+	resources :users
 	resources :sessions, only: [:create]
 	resources :dashboard
 	get 'layouts/landing' #receives incoming request for layouts.ladning
+	#root 'layouts#show'
 	root'layouts#landing' #the root page will be layouts.;admgon
 	post '/sessions' => 'sessions#create'
 	post '/users' => 'users#create'
