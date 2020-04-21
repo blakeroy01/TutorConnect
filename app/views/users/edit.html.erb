@@ -1,15 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>TutorConnect</title>
-  </head>
-  <body>
-    <%= link_to "Log Out", logout_path %>
-    <h1>Tell us about yourself  . . .</h1>
-    <form action="/users/<%= current_user.id %>" method="post">
-      <input type="bio" name="user[bio]" placeholder="userbio"/>
-      <button>Submit</button>
-    </form>
-  </body>
-</html>
+<h1>Edit Yourself</h1>
+<%= form_for @users do |f| %>
+    <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+    </p>
+
+    <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    </p>
+
+    <p>
+    <%= f.label :bio %><br>
+    <%= f.text_field :bio %>
+    </p>
+
+    <% if current_user.is_tutor %>
+        <p>
+        <%= f.label :subject %>
+        <%= f.text_field :subject %>
+        </p>
+    <% end %>
+
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>
+
+<% if flash[:error] %>
+    <div id="error"><%= flash[:error] %></div>
+<% end %>
