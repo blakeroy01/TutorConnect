@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Invalid Credentials</title>
+  </head>
+  <body>
+    <div class = "actions">
+    <% if current_user.is_tutor %>
+        <%= link_to "Edit Profile", '/edit_profiletrue' %>
+    <% elsif !current_user.is_tutor %>
+        <%= link_to "Edit Profile", '/edit_profilefalse' %>
+    <%= link_to "Show Profile", current_user %>
+    <%= link_to "Delete Profile",  current_user, method: "delete"%>
+    </div>
+    <% end %>
+  </body>
+</html>

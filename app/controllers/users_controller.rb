@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       flash[:success] = "Account created"
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
       redirect_to "/register"
@@ -30,27 +30,25 @@ class UsersController < ApplicationController
     @user = User.find(user_params[:id])
   end
 
-  #made
   def show
-    @user = User.find(user_params[:id])
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
   #made
   def update
-    @user = User.find(user_params[:id])
-    if @user.update
-      redirect_to @user, notice: 'Updated!'
-    else
-      render 'edit'
-    end
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
   #made
   def destroy
-    @user = User.find(user_params[:id])
+    @user = User.find(params[:id])
+    session[:id] = nil
     @user.destroy
-
-    redirect_to root_url, notice: 'Deleted'
+    redirect_to root_path
   end
 
   private

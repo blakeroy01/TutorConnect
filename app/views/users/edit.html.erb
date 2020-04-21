@@ -1,2 +1,15 @@
-#KYLE MADE THIS
-    
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TutorConnect</title>
+  </head>
+  <body>
+    <%= link_to "Log Out", logout_path %>
+    <h1>Tell us about yourself  . . .</h1>
+    <form action="/users/<%= current_user.id %>" method="post">
+      <input type="bio" name="user[bio]" placeholder="userbio"/>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
