@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TutorConnect : Settings</title>
+  </head>
+  <body>
+    <div class = "actions">
+    <% if current_user.is_tutor %>
+      <%= link_to "Edit Profile", edit_user_path(current_user) %>
+    <% else %>
+      <%= link_to "Edit Profile", edit_user_path(current_user) %>
+    <%= link_to "Show Profile", user_path(current_user) %>
+    <%= link_to "Delete Profile", delete_path(current_user) %>
+</div>
+<% end %>
+  </body>
+</html>
