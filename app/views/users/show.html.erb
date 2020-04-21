@@ -1,0 +1,21 @@
+<p>
+    <strong>Username:</strong>
+    <%= @users.username %>
+</p>
+
+<p>
+    <strong>Email:</email>
+    <%= @users.email %>
+</p>
+
+<p>
+    <strong>Bio:</strong>
+    <%= @users.bio %>
+</p>
+
+<% if @users.is_tutor %>
+    <p>
+        <strong>Subjects:</strong>
+        <%= @users.subjects %>
+    </p>
+<% end %>
