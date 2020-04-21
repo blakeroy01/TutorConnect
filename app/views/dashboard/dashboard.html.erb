@@ -24,14 +24,7 @@
 					</div>					
 				</div>
 
-				<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
-				<% unless current_user.is_tutor==="false" %>
-				<div class = "col-12 col-md-3 order-3 order-md-2 bg-success">
-					<%= render 'dashboard/components/schedule' %>
-				</div>
-				<% end %>
-
-				<div class = "col-12 col-md-5 order-1 order-md-3 bg-danger">
+				<div class = "col-12 col-md-8 order-1 order-md-2">
 					<%= render 'dashboard/components/chat' %>
 				</div>
 			</div>
