@@ -4,12 +4,27 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
+  def show
+    @users = User.find(params[:id])
+  end
+
+  #made  
+  def new
+    @users = User.new(user_params)
+  end
+
+  #made
+  def edit
+    @users = User.find(params[:id])
+  end
+
   def create
-    user = User.new(user_params)
-    if user.save
+    @users = User.new(user_params)
+    if @users.save
       flash[:success] = "Account created"
       session[:user_id] = user.id
       user.update(conversation_ids: [])
+      session[:user_id] = @users.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
       redirect_to "/register"
@@ -22,36 +37,23 @@ class UsersController < ApplicationController
   end
 
   #made
-  def new
-    @user = User.new
-  end
-
-  #made
-  def edit
-    @user = User.find(user_params[:id])
-  end
-
-  #made
-  def show
-    @user = User.find(user_params[:id])
-  end
-
-  #made
   def update
-    @user = User.find(user_params[:id])
-    if @user.update
-      redirect_to @user, notice: 'Updated!'
+    @users = User.find(params[:id])
+
+    if @users.update(user_params)
+      redirect_to settings_path
     else
       render 'edit'
+      if User.exists?
+        flash[:error] = "Account exists. Please change the username or email again."
+      end
     end
   end
 
   #made
   def destroy
-    @user = User.find(user_params[:id])
-    @user.destroy
-
-    redirect_to root_url, notice: 'Deleted'
+    current_user.destroy
+    redirect_to root_url
   end
 
   private

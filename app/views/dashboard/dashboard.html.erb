@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>TutorConnect : Dashboard</title>
   </head>
-  <body>
     <%= link_to "Log Out", logout_path %>
 
     <h1>Welcome to the dashboard.</h1>
@@ -15,5 +14,15 @@
       <input type="message" name="message" placeholder="message"/>
       <button>Submit</button>
     </form>
+    <%= link_to "Log Out", logout_path %>  
+    <%= link_to "Settings", settings_path %>
+    <%= link_to "Tutors", users_path %>
+    <h1>Welcome to the dashboard.</h1>
+    <h2>Bio:</h2>
+      <%=current_user.bio %>
+    <% if current_user.is_tutor %>
+      <h2>Subjects:</h2>
+      <%=current_user.subjects %>
+    <% end %>
   </body>
 </html>
