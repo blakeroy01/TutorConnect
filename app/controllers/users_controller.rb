@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   #made
   def index
-    @user = User.all  
+    @user = User.all
   end
 
   def show
@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     @users = User.new(user_params)
     if @users.save
       flash[:success] = "Account created"
+      session[:user_id] = user.id
+      user.update(conversation_ids: [])
       session[:user_id] = @users.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
@@ -50,7 +52,6 @@ class UsersController < ApplicationController
 
   #made
   def destroy
-    #@users = User.find(params[:id]) -> BROKEN!!!!!!!!!!
     current_user.destroy
     redirect_to root_url
   end

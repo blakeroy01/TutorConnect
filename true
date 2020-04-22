@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20200402001225_add_user_ids_to_conversations.rb

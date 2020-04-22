@@ -1,12 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    if login_params[:is_tutor] == true
-      login = Tutor.find_by(email:login_params[:email])
-    else
-      login = User.find_by(email:login_params[:email])
-    end
-    if login && login.authenticate(login_params[:password])
-      session[:user_id] = login.id
+    @current_user = User.find_by(email:login_params[:email])
+    if @current_user && @current_user.authenticate(login_params[:password])
+      session[:user_id] = @current_user.id
       redirect_to "/dashboard#{login_params[:is_tutor]}"
     else
       redirect_to "/login"
