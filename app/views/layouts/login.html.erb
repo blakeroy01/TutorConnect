@@ -9,21 +9,18 @@
         <div class = "login-logo">
           <%= link_to image_tag("logoRemastered2.png"), root_path %>
         </div>
-        <div class = "checkbox-container">
-          <div class="slider">
-            <input type="checkbox" name="slider" class="slider-checkbox" id="sliderSwitch">
-            <label class="slider-label" for="sliderSwitch">
-              <span class="slider-inner"></span>
-              <span class="slider-circle"></span>
-            </label>
-          </div>
-        </div>
         <form action="/sessions" method="POST">
           <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
           <input type="email" name="login[email]" placeholder="email"/>
           <input type="password" name="login[password]" placeholder="password"/>
           <button>login</button>
           <p class="message">Not registered? <%= link_to "Create an Account", "register.html"%>
+
+          <% if flash[:error] %>
+            <div id="error"><%= flash[:error] %></div>
+          <% end %>
+
+
         </form>
       </div>
     </div>

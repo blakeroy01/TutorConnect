@@ -7,9 +7,17 @@ class DashboardController < ApplicationController
     render 'dashboard/pre_index'
   end
 
-  def update_bio
-    current_user.update_attributes(bio: params[:bio])
+  def pre_index_tutor
+    render 'dashboard/pre_index_tutor'
+  end
+
+  def update_bio_subjects
+    current_user.update(bio: params[:user][:bio], subject:params[:user][:subjects])
     index
   end
 
+  private
+  def login_params
+    params.require(:bio).permit(:subjects)
+  end
 end
