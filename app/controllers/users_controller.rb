@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if user.save
       flash[:success] = "Account created"
       session[:user_id] = user.id
+      user.update(conversation_ids: [])
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
       redirect_to "/register"

@@ -16,11 +16,8 @@ ActiveRecord::Schema.define(version: 20200402004544) do
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "messages_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tutor_id"
-    t.integer "student_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -41,7 +38,6 @@ ActiveRecord::Schema.define(version: 20200402004544) do
     t.string "bio"
     t.string "subject"
     t.integer "conversation_ids", array: true
-    t.integer "request_id", array: true
   end
 
 end
