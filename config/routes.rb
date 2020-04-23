@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 	#pre_dashboard true false represent the pre_dashboard page for tutors and students
 	post '/dashboard_update_bio' => 'dashboard#update_bio'
 	post '/dashboard_update_bio_subjects' => 'dashboard#update_bio_subjects'
-	 get 'logout', to: 'sessions#destroy', as: 'logout'  
+	get 'logout', to: 'sessions#destroy', as: 'logout'
+	post 'create_message' => 'messages#create'
 	get '/settings' => 'layouts#settings'
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'
