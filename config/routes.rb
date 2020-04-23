@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 	post '/dashboard_update_bio_subjects' => 'dashboard#update_bio_subjects'
 	get 'logout', to: 'sessions#destroy', as: 'logout'
 	post 'create_message' => 'messages#create'
-	 get 'logout', to: 'sessions#destroy', as: 'logout'  
 	get '/settings' => 'layouts#settings'
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'

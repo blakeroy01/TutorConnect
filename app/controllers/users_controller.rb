@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @users = User.find(params[:id])
   end
 
-  #made  
+  #made
   def new
     @users = User.new(user_params)
   end
@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @users = User.new(user_params)
     if @users.save
       flash[:success] = "Account created"
-      session[:user_id] = user.id
-      user.update(conversation_ids: [])
+      session[:user_id] = @users.id
+      @users.update(conversation_ids: [])
       session[:user_id] = @users.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
