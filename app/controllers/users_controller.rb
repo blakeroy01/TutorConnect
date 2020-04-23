@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @users.save
       flash[:success] = "Account created"
       session[:user_id] = @users.id
-      user.update(conversation_ids: [])
+      users.update(conversation_ids: [])
       session[:user_id] = @users.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
