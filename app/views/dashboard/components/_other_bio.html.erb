@@ -1,0 +1,20 @@
+<div class = "shadow">
+	<div>
+		<%= link_to image_tag("generic-profile-pic.png", class:"card-img-top"), root_path %>
+	</div>
+	<div class = "card-body">
+		<h5 class= "card title text-center"> 
+		<%=@users.username%>
+		</h5>	
+		<p class="card-text">
+			<%=@users.bio %>
+		</p>
+
+		<% if @users.is_tutor %>
+			<h5 class= "card title"> Subjects </h5>
+			<%=@users.subject %>
+		<% end %>
+
+
+	</div>
+</div>
