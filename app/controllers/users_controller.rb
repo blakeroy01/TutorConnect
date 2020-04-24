@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   #made
   def index
-    @user = User.all
+    @users = User.all
+  end
+
+  def search
+    @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
   end
 
   def show
@@ -62,3 +66,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor, :bio, :subject)
     end
   end
+
