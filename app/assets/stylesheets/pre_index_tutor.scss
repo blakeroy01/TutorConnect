@@ -8,7 +8,7 @@ body{
     background-color: $creme-color;
 }
 .grid {
-  display: grid;
+  text-align: left;
   padding: 3px
 }
 
@@ -77,4 +77,7 @@ body{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.form-control{
+  align-self: center;
 }

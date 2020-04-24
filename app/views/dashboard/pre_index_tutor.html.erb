@@ -60,6 +60,18 @@
         <span class="checkmark"></span>
       </label>
       </div>
+      <div class="bio-text">
+        <label for="bio">Enter Your Bio:</label>
+        <textarea class="form-control" rows="3" id="bio"></textarea>
+      </div>
+      <script type="text/javascript">
+        var array = []
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          array.push(checkboxes[i].value)
+        }
+      </script>
     </form>
   </body>
 </html>
