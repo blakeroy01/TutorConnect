@@ -1,21 +1,55 @@
-<p>
-    <strong>Username:</strong>
-    <%= @users.username %>
-</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>TutorConnect : Profile</title>
 
-<p>
-    <strong>Email:</email>
-    <%= @users.email %>
-</p>
+		<%-# Bootstrap! -%>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<p>
-    <strong>Bio:</strong>
-    <%= @users.bio %>
-</p>
 
-<% if @users.is_tutor %>
-    <p>
-        <strong>Subjects:</strong>
-        <%= @users.subjects %>
-    </p>
-<% end %>
+	</head>
+	<body>
+		<div class = "container-fullwidth">
+			<%= render 'dashboard/components/dash_header.html.erb' %>
+		</div>
+		<form class="form-inline justify-content-center" action="/search">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search subject (ie: math)">
+				<button class="btn btn-outline-success" type="submit">Search</button>
+		</form>
+		<div class = "container">
+			<div class="row">
+				<div class = "col-12 col-md-4 order-2 order-md-1">
+					<div class = "card">
+                    <div class = "shadow">
+                    <div>
+                        <%= link_to image_tag("generic-profile-pic.png", class:"card-img-top"), root_path %>
+                    </div>
+                    <div class = "card-body">
+                        <h5 class= "card title text-center"> 
+                        <%=@users.username%>
+                        </h5>	
+                        <p class="card-text">
+                            <%=@users.bio %>
+                        </p>
+                
+                        <% if @users.is_tutor %>
+                            <h5 class= "card title"> Subjects </h5>
+                            <%=@users.subject %>
+                        <% end %>
+                
+                
+                    </div>
+                </div>
+					</div>					
+				</div>
+
+				<div class = "col-12 col-md-8 order-1 order-md-2">
+					<%= render 'dashboard/components/chat' %>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

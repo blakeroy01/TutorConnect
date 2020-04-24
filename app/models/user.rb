@@ -5,6 +5,14 @@ class User < ApplicationRecord
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['subject LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
   def self.current
     Thread.current[:user]
   end
