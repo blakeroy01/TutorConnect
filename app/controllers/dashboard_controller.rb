@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
   end
 
   def update_bio_subjects
-    current_user.update(bio: params[:user][:bio], subject:params[:user][:subjects])
+    current_user.update(bio: params[:bio], subject:split_subjects)
     index
   end
 
@@ -20,4 +20,9 @@ class DashboardController < ApplicationController
   def login_params
     params.require(:bio).permit(:subjects)
   end
+
+  def split_subjects
+    params[:subject].split(',') if params[:subject]
+  end
+
 end
