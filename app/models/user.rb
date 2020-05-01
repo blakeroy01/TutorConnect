@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attribute :is_tutor, :boolean, default: false
+  serialize :subject, Array
   has_secure_password
   validates_presence_of :email
   validates_uniqueness_of :email

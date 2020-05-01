@@ -28,26 +28,37 @@
                         <%= link_to image_tag("generic-profile-pic.png", class:"card-img-top"), root_path %>
                     </div>
                     <div class = "card-body">
-                        <h5 class= "card title text-center"> 
+                        <h5 class= "card title text-center">
                         <%=@users.username%>
-                        </h5>	
+                        </h5>
                         <p class="card-text">
                             <%=@users.bio %>
                         </p>
-                
+
                         <% if @users.is_tutor %>
-                            <h5 class= "card title"> Subjects </h5>
-                            <%=@users.subject %>
+                            <h5 class= "card title text-center"> Subjects </h5>
+														<% current_user.subject.each do |element| %>
+														<li><%= element %></li>
+														<% end %>
                         <% end %>
-                
-                
+
+
                     </div>
                 </div>
-					</div>					
+					</div>
 				</div>
 
 				<div class = "col-12 col-md-8 order-1 order-md-2">
-					<%= render 'dashboard/components/chat' %>
+					<% if @users.id == current_user.id || (@users.conversation_ids & current_user.conversation_ids).length > 0%>
+						<% render 'dashboard/components/chat' %>
+						<% else %>
+						<div id="recipient_id" value= "<% @users.id %>">
+						</div>
+						<form class="message" action="/create_message" method="POST">
+							<input type="text" name="message" placeholder="New Message To Tutor">
+							<button type="Submit" onclick="recipient_info()">Send</button>
+						</form>
+				<% end %>
 				</div>
 			</div>
 		</div>
