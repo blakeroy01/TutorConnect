@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
   end
 
+  def rate
+    @current_user.conversation_ids.each do | cid |
+      @users = User.where(":cid = ANY(conversation_ids)")
+    end
+  end
+  
+
+
   def show
     @users = User.find(params[:id])
     session[:tutor_id] = @users.id
