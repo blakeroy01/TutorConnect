@@ -1,5 +1,15 @@
 class DashboardController < ApplicationController
   def index
+    @users_with_conversations = []
+    current_user.conversation_ids.each do |id|
+      user = User.where(" #{id} = ANY(conversation_ids)")
+      if user.last.username == current_user.username
+        @users_with_conversations << user.first
+      else
+      @users_with_conversations << user.last
+      end
+    end
+    @messages = Message.where(conversation_id: current_user.conversation_ids)
     render 'dashboard/dashboard'
   end
 
@@ -34,10 +44,4 @@ class DashboardController < ApplicationController
       nil
     end
   end
-
-  def refresh_chat
-    @users_with_conversations = User.where(conversation_ids: current_user.conversation_ids)
-    @messages = Message.where(conversation_id: current_user.conversation_ids)
-  end
-
 end
