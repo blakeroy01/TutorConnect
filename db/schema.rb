@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200402004544) do
+ActiveRecord::Schema.define(version: 20200502175127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "carrierwave_files", id: :serial, force: :cascade do |t|
+    t.string "path", null: false
+    t.oid "pg_largeobject_oid", null: false
+    t.integer "size", null: false
+    t.string "content_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["path"], name: "index_carrierwave_files_on_path", unique: true
+  end
+
   create_table "conversations", force: :cascade do |t|
+    t.integer "messages_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +35,7 @@ ActiveRecord::Schema.define(version: 20200402004544) do
     t.time "time_sent"
     t.string "message"
     t.integer "conversation_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +50,10 @@ ActiveRecord::Schema.define(version: 20200402004544) do
     t.string "bio"
     t.string "subject"
     t.integer "conversation_ids", array: true
+    t.json "profilepic"
+    t.string "profileavatar"
+    t.string "picture"
+    t.string "profile"
   end
 
 end

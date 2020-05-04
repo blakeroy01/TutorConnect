@@ -14,7 +14,13 @@
     <%= f.label :bio %><br>
     <%= f.text_field :bio %>
     </p>
-
+  
+    <p>
+    <%= f.label :profile %><br>
+    <%= f.file_field :profile %>
+    <%= f.hidden_field :profile_cache %>
+    </p>
+  
     <% if current_user.is_tutor %>
         <p>
         <%= f.label :subject %>

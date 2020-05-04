@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "cucumber-rails", "~> 2.0", :group => :test
 
 gem "database_cleaner", "~> 1.8", :group => :test
+gem 'carrierwave'	#for image uploads
+gem 'mini_magick'
+gem 'fog-aws'
+

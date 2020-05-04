@@ -24,5 +24,7 @@ Rails.application.routes.draw do
 	get '/settings' => 'layouts#settings'
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'
+	#For carrierwave purposes
+	#
 
 end

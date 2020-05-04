@@ -39,7 +39,8 @@ class UsersController < ApplicationController
   #made
   def update
     @users = User.find(params[:id])
-
+	if params[:profile]
+		@user.profile= params[:profile]
     if @users.update(user_params)
       redirect_to settings_path
     else
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
       if User.exists?
         flash[:error] = "Account exists. Please change the username or email again."
       end
+	  end
     end
   end
 
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor)
+      params.require(:user).permit(:username, :email, :password, :profile, :profile_cache, :password_confirmation, :is_tutor)
     end
   end
+ 

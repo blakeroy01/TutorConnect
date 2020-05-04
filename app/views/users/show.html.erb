@@ -12,7 +12,10 @@
     <strong>Bio:</strong>
     <%= @users.bio %>
 </p>
-
+<p>
+  <strong>Profile Pic:</strong>
+  <%= image_tag @user.profile.url %> 
+  </p>
 <% if @users.is_tutor %>
     <p>
         <strong>Subjects:</strong>
