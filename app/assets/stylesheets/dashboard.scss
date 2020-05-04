@@ -8,15 +8,37 @@ $salmon-color: #ff7369;
 $chalkboard-color: #20494F;
 $dark-color:#2A2B2DFF;
 $creme-color:#faf5ed;
-$greenblue-color: rgb(28, 186, 181);
+$slate-color: #63718f;
 
-body{
+//Background color classes
+.bg-creme{
     background-color: $creme-color;
 }
 
+.bg-slate{
+    background-color: $slate-color;
+}
+
 //Header component classes
-.dashHeader{
-    background-color: $greenblue-color;
+@media only screen and (max-width: 599.98px) {
+    .bigLogo{
+        display:none;
+    }
+    .smallLogo{
+        display:block;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .bigLogo{
+        display:block;
+    }
+    .smallLogo{
+        display:none;
+    }
+}
+
+.search-bar{
+    min-width: 350px;
 }
 
 

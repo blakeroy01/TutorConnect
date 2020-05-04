@@ -1,38 +1,39 @@
-<header class = "row dashHeader shadow">
-	<div class = "col-sm mx-3">
-		<%= link_to image_tag("logo2.png"), "/dashboard", :class=>"img-fluid h-50" %>
-	</div>
-	<div class = "col-sm">
+<header class = "bg-slate border-bottom-0 shadow mb-2">
 
-		<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
-		<% unless current_user.is_tutor=="false" %>
-			<%-# search bar goes here, student page only -%>
-		<% end %>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class = "navbar-brand">
+				<%= link_to image_tag("logo2.png", class: "img-fluid bigLogo", width:"350px"), "/dashboard" %>
+				<%= link_to image_tag("logoSmall.png", class: "img-fluid smallLogo"), "/dashboard" %>
+			</div>
 
-		<nav class="navbar navbar-expand-lg navbar-light float-md-right float-sm-left mr-auto">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item btn btn-outline-dark">
-						<div class = "nav-link">
-							<%= link_to "Home", "/dashboard" %>
-							<% session[:tutor_user_id] = nil %>
-						</div>
+
+				<% unless current_user.is_tutor=="false" %>
+				<form class="form-inline input-group search-bar mx-3 my-1 my-lg-0" action="/search">
+					<input class="form-control" name="q" type="text" placeholder="Search subject (ie: math)">
+					<div class = "input-group-append">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</div>
+				</form>
+				<% end %>
+
+				<ul class="navbar-nav my-0 mx-auto">
+					<li class="nav-item">
+						<%= link_to "<div class=\"btn btn-outline-dark\">Home</div>".html_safe, "/dashboard"%>
+						<% session[:tutor_user_id] = nil %>
 					</li>
-					<li class="nav-item btn btn-outline-dark">
-						<div class = "nav-link">
-							<%= link_to "Settings", settings_path %>
-						</div>
+					<li class="nav-item">
+						<%= link_to "<div class=\"btn btn-outline-dark\">Settings</div>".html_safe, settings_path%>
 					</li>
-					<li class="nav-item btn btn-outline-danger">
-						<div class = "nav-link">
-							<%= link_to "Log Out", logout_path %>
-						</div>
+					<li class="nav-item">
+						<%= link_to "<div class=\"btn btn-outline-danger text-truncate\">Log Out</div>".html_safe, logout_path%>
 					</li>
+						
 				</ul>
 			</div>
 		</nav>
-	</div>
 </header>
