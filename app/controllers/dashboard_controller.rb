@@ -21,8 +21,18 @@ class DashboardController < ApplicationController
     params.require(:bio).permit(:subjects)
   end
 
-  def split_subjects
-    params[:subject].split(',') if params[:subject]
+  def split_subjects()
+    if params[:subject]
+      if params[:subject].length > 1
+        params[:subject].split(',') 
+      elsif params[:subject] == ''
+        params[:subject] = []
+      else
+        params[:subject]
+      end
+    else
+      nil
+    end
   end
 
 end

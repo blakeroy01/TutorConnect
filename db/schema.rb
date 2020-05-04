@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20200501060432) do
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "messages_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
