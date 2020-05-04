@@ -1,16 +1,81 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>TutorConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <div class = "container-fullwidth">
+      <%= render 'dashboard/dash_header_pre_index.html.erb' %>
+    </div>
+    <%= stylesheet_link_tag "pre_index_tutor.css" %>
   </head>
   <body>
-    <%= link_to "Log Out", logout_path %>
-    <h1>Tell us about yourself and what you would like to tutor in . . .</h1>
-    <form action="/dashboard_update_bio_subjects" method="post">
-      <input type="bio" name="user[bio]" placeholder="userbio">
-      <input type="subjects" name="user[subjects]" placeholder="subjects">
-      <button>Submit</button>
-    </form>
+    <h1>Pick Your Subjects</h1>
+    <form action="/dashboard_update_bio_subjects" method="POST">
+      <div class="grid">
+
+      <label class="container">English
+        <input type="checkbox" value="English">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Foreign Languages
+        <input type="checkbox" value="Foreign Languages">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Computer Science
+        <input type="checkbox" value="Computer Science">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Informatics
+        <input type="checkbox" value="Informatics">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Psychology
+        <input type="checkbox" value="Psychology">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Sociology
+        <input type="checkbox" value="Sociology">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Biology
+        <input type="checkbox" value="Biology">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Chemistry
+        <input type="checkbox" value="Chemistry">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Other
+        <input type="checkbox" value="Other">
+        <span class="checkmark"></span>
+      </label>
+      <script>
+        function javascript(){
+        var array = []
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+        for (var i = 0; i < checkboxes.length; i++) {
+          array.push(checkboxes[i].value)
+        }
+        document.getElementById('subject').value = array;
+        document.getElementById('bio').value = document.getElementById('bio-text').value
+      }
+      </script>
+      </div>
+          <label for="bio">Enter Your Bio:</label>
+          <textarea class="form-control" rows="3" id="bio-text"></textarea>
+          <input type="hidden" id="bio" name="bio">
+          <input type="hidden" id="subject" name="subject">
+          <button onclick="javascript()">Submit</button>
+        </form>
   </body>
 </html>

@@ -1,11 +1,24 @@
 class UsersController < ApplicationController
   #made
   def index
-    @user = User.all
+    @users = User.all
   end
+
+  def search
+    @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
+  end
+
+  def rate
+    @current_user.conversation_ids.each do | cid |
+      @users = User.where(":cid = ANY(conversation_ids)")
+    end
+  end
+  
+
 
   def show
     @users = User.find(params[:id])
+    session[:tutor_id] = @users.id
   end
 
   #made
@@ -16,6 +29,7 @@ class UsersController < ApplicationController
   #made
   def edit
     @users = User.find(params[:id])
+
   end
 
   def create
@@ -23,7 +37,7 @@ class UsersController < ApplicationController
     if @users.save
       flash[:success] = "Account created"
       session[:user_id] = @users.id
-      @users.update(conversation_ids: [])
+      @users.update(conversation_ids: [], rating: 0, rating_count: 0)
       session[:user_id] = @users.id
       redirect_to "/pre_dashboard#{user_params[:is_tutor]}"
     else
@@ -58,6 +72,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor, :bio, :subject)
     end
+
   end

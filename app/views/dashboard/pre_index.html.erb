@@ -1,15 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>TutorConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <div class = "container-fullwidth">
+      <%= render 'dashboard/dash_header_pre_index.html.erb' %>
+    </div>
+    <%= stylesheet_link_tag "pre_index_tutor.css" %>
   </head>
   <body>
-    <%= link_to "Log Out", logout_path %>
-    <h1>Tell us about yourself  . . .</h1>
-    <form action="/dashboard_update_bio_subjects" method="post">
-      <input type="bio" name="user[bio]" placeholder="userbio"/>
-      <button>Submit</button>
-    </form>
+    <h1>Tell Us About Yourself</h1>
+    <form action="/dashboard_update_bio_subjects" method="POST">
+      <script>
+        function javascript(){
+        document.getElementById('bio').value = document.getElementById('bio-text').value
+      }
+      </script>
+          <label for="bio">Enter Your Bio:</label>
+          <textarea cols="100" rows="3" id="bio-text"></textarea>
+          <input type="hidden" id="bio" name="bio">
+          <button onclick="javascript()">Submit</button>
+        </form>
   </body>
 </html>

@@ -1,0 +1,38 @@
+<header class = "row dashHeader shadow">
+	<div class = "col-sm mx-3">
+		<%= link_to image_tag("logo2.png"), "/dashboard", :class=>"img-fluid h-50" %>
+	</div>
+	<div class = "col-sm">
+
+		<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
+		<% unless current_user.is_tutor=="false" %>
+			<%-# search bar goes here, student page only -%>
+		<% end %>
+
+		<nav class="navbar navbar-expand-lg navbar-light float-md-right float-sm-left mr-auto">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item btn btn-outline-dark">
+						<div class = "nav-link">
+							<%= link_to "Home", "/dashboard" %>
+							<% session[:tutor_user_id] = nil %>
+						</div>
+					</li>
+					<li class="nav-item btn btn-outline-dark">
+						<div class = "nav-link">
+							<%= link_to "Settings", settings_path %>
+						</div>
+					</li>
+					<li class="nav-item btn btn-outline-danger">
+						<div class = "nav-link">
+							<%= link_to "Log Out", logout_path %>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
