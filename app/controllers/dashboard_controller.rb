@@ -24,7 +24,7 @@ class DashboardController < ApplicationController
   def split_subjects()
     if params[:subject]
       if params[:subject].length > 1
-        params[:subject].split(',') 
+        params[:subject].split(',')
       elsif params[:subject] == ''
         params[:subject] = []
       else
@@ -33,6 +33,11 @@ class DashboardController < ApplicationController
     else
       nil
     end
+  end
+
+  def refresh_chat
+    @users_with_conversations = User.where(conversation_ids: current_user.conversation_ids)
+    @messages = Message.where(conversation_id: current_user.conversation_ids)
   end
 
 end
