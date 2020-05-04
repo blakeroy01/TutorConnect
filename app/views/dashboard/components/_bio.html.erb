@@ -17,9 +17,13 @@
 			<% end %>
 		<% end %>
 
-		<% if current_user.is_tutor=="false" %>
-			<%-# Rating Past tutors link goes here -%> 
+		<% unless current_user.is_tutor == "false" %>
+			<h5 class= "card title text-center"> Rate </h5>
+			<div class = "card-text">
+			<%= link_to 'Rate Past Tutors', rate_path %>
+			</div>
 		<% end %>
+		
 
 
 	</div>

@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'
 	get '/search', to: 'users#search'
+	get '/rate', to: 'users#rate'
 end
