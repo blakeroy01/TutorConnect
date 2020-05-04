@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'
 	get '/search', to: 'users#search'
+	post '/addreview' => 'users#addreview'
 end
