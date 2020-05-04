@@ -10,12 +10,12 @@ $dark-color:#2A2B2DFF;
 $creme-color:#faf5ed;
 $slate-color: #535f79;
 
-body{
+//Background color classes
+.bg-creme{
     background-color: $creme-color;
 }
 
-//Header component classes
-.dashHeader{
+.bg-slate{
     background-color: $slate-color;
 }
 
