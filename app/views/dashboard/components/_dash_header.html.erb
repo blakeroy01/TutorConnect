@@ -1,14 +1,21 @@
-<header class = "row dashHeader shadow">
+<header class = "row dashHeader border-bottom-0 shadow">
 	<div class = "col-sm mx-3">
 		<%= link_to image_tag("logo2.png"), "/dashboard", :class=>"img-fluid h-50" %>
 	</div>
-	<div class = "col-sm">
 
-		<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
+	<%-# Conditional rendering should work in theory, but is not. Possibly a DB issue? -%>
 		<% unless current_user.is_tutor=="false" %>
-			<%-# search bar goes here, student page only -%>
+		<div class = "col-sm">
+			<form class="form-inline input-group justify-content-center" action="/search">
+				<input class="form-control" name="q" type="text" placeholder="Search subject (ie: math)">
+				<div class = "input-group-append">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</div>
+			</form>
+		</div>
 		<% end %>
 
+	<div class = "col-sm">
 		<nav class="navbar navbar-expand-lg navbar-light float-md-right float-sm-left mr-auto">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
