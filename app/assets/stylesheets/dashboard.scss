@@ -19,6 +19,24 @@ $slate-color: #535f79;
     background-color: $slate-color;
 }
 
+//Header component classes
+@media only screen and (max-width: 599.98px) {
+    .bigLogo{
+        display:none;
+    }
+    .smallLogo{
+        display:block;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .bigLogo{
+        display:block;
+    }
+    .smallLogo{
+        display:none;
+    }
+}
+
 
 //Bio component classes
 .bio {
