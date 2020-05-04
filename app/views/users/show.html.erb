@@ -15,8 +15,8 @@
 		<div class = "container-fullwidth">
 			<%= render 'dashboard/components/dash_header.html.erb' %>
 		</div>
-		<form class="form-inline justify-content-center" action="/search">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search subject (ie: math)">
+		<form class="form-inline justify-content-center" action="/search" method="GET">
+			<input class="form-control mr-sm-2" name="q" type="text" placeholder="Search subject (ie: math)">
 				<button class="btn btn-outline-success" type="submit">Search</button>
 		</form>
 		<div class = "container">
