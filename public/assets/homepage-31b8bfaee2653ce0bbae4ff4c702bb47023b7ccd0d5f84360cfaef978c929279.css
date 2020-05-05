@@ -1,4 +1,5 @@
 /*defines default styles and background*/
+
 html, body{
 	display: block;
 	position: relative;
@@ -45,8 +46,8 @@ html, body{
 	width:100%;
 	/*height:1500px;*/
 	position:absolute;
-	background-color: #5582b5;
-	/* background-image: url("tutor_landing_pic_reversed.png"); */
+	background-color: #faf5ed;
+	background-image: url("tutor_landing_pic_reversed.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -145,7 +146,7 @@ html, body{
 /*********************************************************/
 /*defines styles for "On God"*/
 .landing-container .banner h1{
-	color: #fffede;
+	color: #faf5ed;
 	text-align: center;
 	display:block;
 	font-size:calc(72px + 12vh);
