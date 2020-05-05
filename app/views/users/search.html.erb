@@ -28,7 +28,7 @@
 				<tbody>
 					<%= @users.each do |user| %>
 						<%= user.subject.each do |s| %>
-							<% if s == params[:q] %>
+							<% if s == params[:q] && user != current_user %>
 								<tr>
 									<td class="th-sm text-center"><%= link_to user.username, user_path(user) %></td>
 									<td class="th-sm text-center"><%= s %></td>
