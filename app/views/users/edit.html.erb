@@ -17,33 +17,13 @@
 		<div class = "card">
 			<h1 class = "card-header">Edit Profile</h1>
 			<div class = "card-body">
-				<%= form_for @users do |f| %>
-					<p>
-					<%= f.label :username %><br>
-					<%= f.text_field :username %>
-					</p>
-
-					<p>
-					<%= f.label :email %><br>
-					<%= f.text_field :email %>
-					</p>
-
-					<p>
-					<%= f.label :bio %><br>
-					<%= f.text_field :bio %>
-					</p>
-
-					<% if current_user.is_tutor %>
-						<p>
-						<%= f.label :subjects %>
-						<%= f.text_field :subject %>
-						</p>
-					<% end %>
-
-					<p>
-					<%= f.submit %>
-					</p>
-				<% end %>
+		    <form action="/update" method="POST">
+					<input type="text" name="user[username]" placeholder="Update Username">
+					<input type="text" name="user[email]" placeholder="Update Email">
+					<input type="text" name="user[bio]" placeholder="Update Bio">
+		      <div class="grid">
+						<button>Submit</button>
+					</form>
 
 				<% if flash[:error] %>
 					<div id="error"><%= flash[:error] %></div>

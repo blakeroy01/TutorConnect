@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   #made
 
   def search
-    @query = params[:q].titleize  
+    @query = params[:q].titleize
     @users = User.where("subject LIKE ?", "%" + @query + "%")
   end
 
@@ -47,8 +47,7 @@ class UsersController < ApplicationController
 
   #made
   def update
-    @users = User.find(params[:id])
-
+    @users = current_user
     if @users.update(user_params)
       redirect_to settings_path
     else
