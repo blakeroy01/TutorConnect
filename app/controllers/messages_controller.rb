@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
       message.save
     else
       @conversation = Conversation.new()
-      if conversation.save
+      if @conversation.save
         append_conversation_id(@conversation.id, @recipient)
         message = Message.new(message: params[:message], conversation_id: @conversation.id, user_id: current_user.id)
         message.save
