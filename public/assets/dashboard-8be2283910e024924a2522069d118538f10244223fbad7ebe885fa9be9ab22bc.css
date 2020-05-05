@@ -1,0 +1,81 @@
+/* line 14, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.bg-creme {
+  background-color: #faf5ed;
+}
+
+/* line 18, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.bg-slate {
+  background-color: #63718f;
+}
+
+/* line 23, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.navbar-collapse {
+  text-align: right;
+}
+
+@media only screen and (max-width: 599.98px) {
+  /* line 28, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+  .bigLogo {
+    display: none;
+  }
+
+  /* line 31, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+  .smallLogo {
+    display: block;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* line 36, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+  .bigLogo {
+    display: block;
+  }
+
+  /* line 39, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+  .smallLogo {
+    display: none;
+  }
+}
+/* line 44, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.search-bar {
+  min-width: 350px;
+}
+
+/* line 50, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.bio {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 57, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.bio-container {
+  left: 45px;
+  top: 403px;
+  width: 100%;
+  height: 110px;
+  border-style: solid;
+  border-width: thin;
+}
+
+/* line 66, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* line 73, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.profile-pic-container {
+  left: 45px;
+  top: 163px;
+  width: 100%;
+  height: 214px;
+  border-style: solid;
+}
+
+/* line 81, C:/Users/Blake/Desktop/TutorConnect/app/assets/stylesheets/dashboard.scss */
+.kdb {
+  background-color: #2A2B2DFF;
+}
