@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @query = params[:q].capitalize
+    @query = params[:q].capitalize   
     @users = User.where("subject LIKE ?", "%" + @query + "%")
   end
 

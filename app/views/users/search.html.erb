@@ -29,6 +29,9 @@
 							</tr>
 						</thead>
 						<tbody>
+						<% if params[:q] == nil %>
+							<p> Please enter a subject </p>
+						<% else%>
 							<% @users.each do |user| %>
 								<% user.subject.each do |s| %>
 									<% if s.casecmp(params[:q]) == 0 && user != current_user %>
@@ -45,6 +48,7 @@
 								<%end%>
 							<%end%>
 						</tbody>
+						<%end %>
 					</table>
 				</div>
 			</div>
