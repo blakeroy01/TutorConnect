@@ -52,7 +52,7 @@
 								<form class="form-inline input-group" action="/create_message" method="POST">
 									<input class="form-control" type="text" name="message" placeholder="Message this tutor!"/>
 									<div class = "input-group-append">
-										<button class = "btn btn-outline-success" type="Submit" onclick="recipient_info()">Send</button>
+										<button class = "btn btn-outline-dark" type="Submit" onclick="recipient_info()">Send</button>
 									</div>
 								</form>
 							</div>
@@ -64,7 +64,7 @@
 							<form class="form-inline input-group justify-content-center" action="/addreview" method="POST">
 								<input class="form-control" name="r" type="text" placeholder="Add your review here (1-5)"/>
 								<div class = "input-group-append">
-									<button class="btn btn-outline-success" type="submit">Submit</button>
+									<button class="btn btn-outline-dark" type="submit">Submit</button>
 								</div>
 								<% if flash[:error] %>
 									<div id="error"><%= flash[:error] %></div>
