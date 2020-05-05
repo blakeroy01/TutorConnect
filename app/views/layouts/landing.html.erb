@@ -11,7 +11,6 @@
         <div class="landing-container">
             <div class="nav-container">
                 <!--<%= link_to image_tag("pepe.png"), root_path %>-->
-                <a href="landing.html.erb"><span class = "salmon-color">T</span><span class ="chalkboard-color">C</span></a>
                 <div class="nav-bar">
                     <div class="nav-contents">
                         <!--<a href="home.html">HOME</a>-->
@@ -24,76 +23,13 @@
             </div>
             <div class="banner">
                 <span class = "salmon-color">T</span>utor<span class ="chalkboard-color">C</span>onnect
-                <div class="download-app">
-                    <a href="#download">
-                        <span class="chalkboard-color">DOWNLOAD</span>
-                        <span class ="salmon-color">THE</span>
-                        <span class ="salmon-color">APP</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <div class="contents">
-            <!-- *********************           Story container       ***********************-->
-            <div class="story-container" id="story">                    <!--subject to change-->
-                <!--<img class="bg-img" src="images/assets/story-bg.png">-->
-                <div class="row">
-                    <div class ="column left">
-                        <h1>Step 1</h1>
-                        <h2>Register and Login</h2>
-                        <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-                    </div>
-
-                    <div class ="column middle">
-                        <h1>Step 2</h1>
-                        <h2>Choose your campus and subjects</h2>
-                    </div>
-
-                    <div class ="column right">
-                        <h1>Step 3</h1>
-                        <h2>Select a time</h2>
-                    </div>
-                </div>
-                <div class="bottom-container">
-                    <p>Lorem Ipsum</p>
-                </div>
-            </div>
-
-            <!-- *********************           Services container       ***********************-->
-            <div class="services-container">
-                <h1>Step 4</h1>
-                <h2>Choose your tutor!</h2>
-
-            </div>
-
-            <!-- *********************           video container       ***********************-->
-            <div class="vid-container" id="video">
-                <img class="bg-img" src="images/assets/vid-bg.png" alt=""/>
-                <div class="vid-content">
-                    <img src="images/assets/vid-placeholder.png" alt=""/>
-                </div>
-            </div>
-            <!-- *********************           Footer container       ***********************-->
-            <div class = footer-container>
-                <div class="top-footer">
-                    <div class="sm-container">
-                        <a href="https://www.facebook.com/"><img class="footer-icon" src="fb-sm.png" alt="facebook"/></a>                    <!--facebook link-->
-                        <a href="https://www.youtube.com/"><img class="footer-icon" src="yt-sm.png" alt="youtube"/></a>                    <!--youtube link-->
-                    </div>
-                    <div class="sub-container">
-                        <p>Subscribe to our Newsletter</p>
-                        <form>
-                            <input type="text" placeholder="Enter your email.com"/>
-                        </form>
-                    </div>
-                </div>
-                <div class="bottom-footer">
-                    <div class="contact">
-                        <pre>1400 Washington Ave, Albany NY 12222</pre>
-                        <pre>(555) 555-5555          crouton.net</pre>
-                    </div>
-                </div>
+                
+                <%= link_to "<div class=\"download-app\">
+                    <span class=\"chalkboard-color\">SIGN</span>
+                    <span class =\"chalkboard-color\">UP</span>
+                    <span class =\"salmon-color\">NOW</span>
+                    </div>".html_safe, "/register"%>
+                
             </div>
         </div>
     </div>

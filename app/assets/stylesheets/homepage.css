@@ -43,8 +43,9 @@ html, body{
 /*defines page size*/
 .body-container{
 	width:100%;
-	height:1500px;
+	/*height:1500px;*/
 	position:absolute;
+	background-color: #faf5ed;
 	background-image: url("tutor_landing_pic_reversed.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
