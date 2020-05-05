@@ -1,7 +1,11 @@
 class DashboardController < ApplicationController
 
-  def refresh
-    index
+  def dashboard
+    render 'dashboard/dashboard'
+  end
+
+  def show
+    index(user_id: params[:user_id], conversation_id: params[:conversation_id].first)
   end
 
   def pre_index
@@ -14,10 +18,11 @@ class DashboardController < ApplicationController
 
   def update_bio_subjects
     current_user.update(bio: params[:bio], subject:split_subjects)
-    index
+    render 'dashboard/dashboard'
   end
 
   private
+
   def login_params
     params.require(:bio).permit(:subjects)
   end

@@ -25,6 +25,6 @@ Rails.application.routes.draw do
 	get '/delete' => 'users#destroy'
 	get '/search', to: 'users#search'
 	post '/addreview' => 'users#addreview'
-	get 'refresh_dashboard_path' => 'dashboard#refresh'
 	post '/create_message_refresh' => 'messages#refresh'
+	get '/dashboard/refresh' => 'dashboard#refresh', as: 'refresh_dashboard'
 end

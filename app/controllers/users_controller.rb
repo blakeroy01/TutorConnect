@@ -11,8 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   def show
     @u = User.find(params[:id])
     session[:tutor_id] = @u.id

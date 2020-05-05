@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  def index
+  def index(user_id: nil, conversation_id: nil)
     @users_with_conversations = []
     current_user.conversation_ids.each do |id|
       user = User.where(" #{id} = ANY(conversation_ids)")
@@ -15,9 +15,13 @@ class ApplicationController < ActionController::Base
       @users_with_conversations << user.last
       end
     end
-      @messages = Message.where(conversation_id: params[:conversation_id])
-      @messaged_user = User.find_by(id: params[:user_id])
-    render 'dashboard/dashboard'
+      @messaged_user = User.find_by(id: user_id)
+      @messages = Message.where(conversation_id: conversation_id)
+      if @messaged_user == nil
+        @messaged_user = @users_with_conversations.first
+      end
+      session[:tutor_id] = @messaged_user.id
+      render 'dashboard/dashboard'
   end
 
 end
