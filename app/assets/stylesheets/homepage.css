@@ -172,7 +172,7 @@ html, body{
 	margin: 0;
 	font-size: calc(10px + .9vw); /*calc method calculates static size (px) + responsive size (vw) to determine min and max font-size*/
 	font-weight: bold;
-	color: #ffffff;
+	color: #000;
 	transition: 0.2s;
 }
 
