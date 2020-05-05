@@ -13,12 +13,12 @@
 		<% if current_user.is_tutor %>
 			<h5 class= "card title text-center"> Subjects </h5>
 			<% current_user.subject.each do |element| %>
-  		<li><%= element %></li>
+  		<li style="text-decoration: none;"><%= element %></li>
 			<% end %>
 		<% end %>
 
-		<% if current_user.is_tutor=="false" %>
-			<%-# Rating Past tutors link goes here -%> 
+		<% if current_user.is_tutor=="true" %>
+						
 		<% end %>
 
 

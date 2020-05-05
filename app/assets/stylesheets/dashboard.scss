@@ -8,51 +8,78 @@ $salmon-color: #ff7369;
 $chalkboard-color: #20494F;
 $dark-color:#2A2B2DFF;
 $creme-color:#faf5ed;
-$greenblue-color: rgb(28, 186, 181);
+$slate-color: #63718f;
 
-body{
-    background-color: $creme-color;
+//Background color classes
+.bg-creme{
+	background-color: $creme-color;
+}
+
+.bg-slate{
+	background-color: $slate-color;
 }
 
 //Header component classes
-.dashHeader{
-    background-color: $greenblue-color;
+.navbar-collapse{
+	text-align: right;
+}
+
+@media only screen and (max-width: 599.98px) {
+	.bigLogo{
+		display:none;
+	}
+	.smallLogo{
+		display:block;
+	}
+}
+@media only screen and (min-width: 600px) {
+	.bigLogo{
+		display:block;
+	}
+	.smallLogo{
+		display:none;
+	}
+}
+
+.search-bar{
+	min-width: 350px;
 }
 
 
 //Bio component classes
 .bio {
-    position: relative;
-    width:100%;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-
+	position: relative;
+	width:100%;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .bio-container {
-    left: 45px;
-    top: 403px;
-    width: 100%;
-    height: 110px;
-    border-style: solid;
-    border-width: thin;
-
-
+	left: 45px;
+	top: 403px;
+	width: 100%;
+	height: 110px;
+	border-style: solid;
+	border-width: thin;
 }
 
 .profile-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin-right: auto;
-    text-align:left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin-right: auto;
+	text-align:left;
 }
 
 .profile-pic-container {
-    left: 45px;
-    top: 163px;
-    width:100%;
-    height: 214px;
-    border-style: solid;
+	left: 45px;
+	top: 163px;
+	width:100%;
+	height: 214px;
+	border-style: solid;
+}
+
+.kdb{
+	background-color: #2A2B2DFF;
 }
 
 //Chatbox

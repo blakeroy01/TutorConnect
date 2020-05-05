@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 	post '/users' => 'users#create'
 	get '/login' => 'layouts#login'
 	get '/register' => 'layouts#register'
-	get '/dashboard' => 'dashboard#index'
+	get '/dashboard' => 'dashboard#refresh'
 	#edit_profile true false represents the edit profile page for tutors and students
 	get '/pre_dashboardfalse' => 'dashboard#pre_index'
 	get '/pre_dashboardtrue' => 'dashboard#pre_index_tutor'
@@ -24,4 +24,7 @@ Rails.application.routes.draw do
 	get '/tutors' => 'layouts#index'
 	get '/delete' => 'users#destroy'
 	get '/search', to: 'users#search'
+	post '/addreview' => 'users#addreview'
+	post '/create_message_refresh' => 'messages#refresh'
+	get '/dashboard/refresh' => 'dashboard#refresh', as: 'refresh_dashboard'
 end

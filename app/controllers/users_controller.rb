@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   #made
-  def index
-    @users = User.all
-  end
 
   def search
-    @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
+    @query = params[:q].capitalize   
+    @users = User.where("subject LIKE ?", "%" + @query + "%")
   end
 
   def rate
@@ -13,12 +11,10 @@ class UsersController < ApplicationController
       @users = User.where(":cid = ANY(conversation_ids)")
     end
   end
-  
-
 
   def show
-    @users = User.find(params[:id])
-    session[:tutor_id] = @users.id
+    @u = User.find(params[:id])
+    session[:tutor_id] = @u.id
   end
 
   #made
@@ -29,7 +25,6 @@ class UsersController < ApplicationController
   #made
   def edit
     @users = User.find(params[:id])
-
   end
 
   def create
@@ -69,6 +64,23 @@ class UsersController < ApplicationController
     current_user.destroy
     redirect_to root_url
   end
+
+  #made
+  def addreview
+    @u = User.find_by_id(session[:tutor_id])
+    if params[:r]
+      if params[:r].to_i > 5
+        flash.alert = "Read instructions"
+      else
+        rating_count = @u.rating_count + 1
+        rating = params[:r].to_i + @u.rating
+        @u.update(rating: rating)
+        @u.update(rating_count: rating_count)
+        flash[:success] = "Review added"
+      end
+    end
+  end
+
 
   private
     def user_params
