@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
+    @query = params[:q].capitalize   
+    @users = User.where("subject LIKE ?", "%" + @query + "%")
   end
 
   def rate
@@ -74,7 +75,7 @@ class UsersController < ApplicationController
     @u = User.find_by_id(session[:tutor_id])
     if params[:r]
       if params[:r].to_i > 5
-        flash[:error] = "Read instructions"
+        flash.alert = "Read instructions"
       else
         rating_count = @u.rating_count + 1
         rating = params[:r].to_i + @u.rating
