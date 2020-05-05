@@ -16,17 +16,17 @@
 		<%= render 'dashboard/components/dash_header.html.erb' %>
 		</div>
 		<div class = "container">
-		<div class = "card">
-			<h2 class = "card-header">Settings</h2>
-			<div class = "card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-					<li class="list-group-item"><%= link_to "Homepage", '/dashboard' %></li>
-					<li class="list-group-item"><%= link_to "Show Profile", user_path(current_user) %></li>
-					<li class="list-group-item"><%= link_to "Delete Profile", delete_path(current_user) %></li>
-				</ul>
+			<div class = "card">
+				<h2 class = "card-header">Settings</h2>
+				<div class = "card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+						<li class="list-group-item"><%= link_to "Homepage", '/dashboard' %></li>
+						<li class="list-group-item"><%= link_to "Show Profile", user_path(current_user) %></li>
+						<li class="list-group-item"><%= link_to "Delete Profile", delete_path(current_user) %></li>
+					</ul>
+				</div>
 			</div>
-		</div>
 		</div>
 	</body>
 </html>
