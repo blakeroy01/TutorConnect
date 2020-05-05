@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 	post '/addreview' => 'users#addreview'
 	post '/create_message_refresh' => 'messages#refresh'
 	get '/dashboard/refresh' => 'dashboard#refresh', as: 'refresh_dashboard'
+	post 'update' => 'users#update'
 end
