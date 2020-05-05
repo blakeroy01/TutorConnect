@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
       if @messaged_user == nil
         @messaged_user = @users_with_conversations.first
       end
-      session[:tutor_id] = @messaged_user.id
+      if @messaged_user
+        session[:tutor_id] = @messaged_user.id
+      end
       render 'dashboard/dashboard'
   end
 
