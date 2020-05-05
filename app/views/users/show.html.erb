@@ -17,9 +17,8 @@
 		</div>
 		<div class = "container">
 			<div class="row">
-				<div class = "col-12 col-md-4 order-2 order-md-1">
-					<div class = "card">
-                    	<div class = "shadow">
+				<div class = "col-12 col-md-4">
+					<div class = "card shadow">
                     	<div>
                         	<%= link_to image_tag("generic-profile-pic.png", class:"card-img-top"), root_path %>
                     	</div>
@@ -40,33 +39,47 @@
                     	</div>
                 	</div>
 				</div>
-			</div>
 
-			<div class = "col-12 col-md-8 order-1 order-md-2">
-				<% if @u.id == current_user.id || (@u.conversation_ids & current_user.conversation_ids).length > 0%>
-					<% render 'dashboard/components/chat' %>
-				<% else %>
-					<div id="recipient_id" value= "<% @u.id %>">
+				<div class = "col-12 col-md-8">	
+					<% if @u.id == current_user.id || (@u.conversation_ids & current_user.conversation_ids).length > 0%>
+						<% render 'dashboard/components/chat' %>
+					<% else %>
+						<div class = "card shadow py-2">
+							<h4 class="card-header">Chat with <%=@u.username %></h4>
+							<div class = "card-body">
+								<div id="recipient_id" value= "<% @u.id %>">
+								</div>
+								<form class="form-inline input-group" action="/create_message" method="POST">
+									<input class="form-control" type="text" name="message" placeholder="Message this tutor!"/>
+									<div class = "input-group-append">
+										<button class = "btn btn-outline-success" type="Submit" onclick="recipient_info()">Send</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					<% end %>
+					<div class = "card shadow py-2 mt-2">
+						<h4 class="card-header">Review <%=@u.username %></h4>
+						<div class = "card-body">
+							<form class="form-inline input-group justify-content-center" action="/addreview" method="POST">
+								<input class="form-control" name="r" type="text" placeholder="Add your review here (1-5)"/>
+								<div class = "input-group-append">
+									<button class="btn btn-outline-success" type="submit">Submit</button>
+								</div>
+								<% if flash[:error] %>
+									<div id="error"><%= flash[:error] %></div>
+								<% elsif flash[:success] %>
+									<div id="success"><%= flash[:success] %></div>
+								<% end %>
+							</form>
+						</div>
 					</div>
-					<form class="message" action="/create_message" method="POST">
-						<input type="text" name="message" placeholder="New Message To Tutor">
-							<button type="Submit" onclick="recipient_info()">Send</button>
-					</form>
-				<% end %>
+
+					
 				</div>
+
 			</div>
 
-			<h3 class="text-center">Review</h3>
-			<p> Add your review here (1-5) </p>
-			<form class="form-inline justify-content-center" action="/addreview" method="POST">
-				<input class="form-control mr-sm-2" name="r" type="text" placeholder="Add review...">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-					<% if flash[:error] %>
-				<div id="error"><%= flash[:error] %></div>
-			<% elsif flash[:success] %>
-				<div id="success"><%= flash[:success] %></div>
-			<% end %>
-			</form>
 		</div>
 	</body>
 </html>
