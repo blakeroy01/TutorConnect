@@ -71,6 +71,16 @@
 							</form>
 						</div>
 					</div>
+					<div class = "card shadow py-2 mt-2">
+	<h4 class="card-header">Rating</h4>
+	<div class="card-body">
+		<% if @u.rating_count != 0 %>
+			<p> Out of <%= @u.rating_count %> review, <%= @u.username %> got a <kbd class="kdb"><%= (@u.rating / @u.rating_count).to_f %></kbd> out of 5. </p>
+		<% else %>
+			<p> <%= @u.username %> has no reviews! </p>
+		<% end %>
+	</div>
+</div>
 
 
 				</div>
