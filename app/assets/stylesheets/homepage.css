@@ -172,7 +172,7 @@ html, body{
 	margin: 0;
 	font-size: calc(10px + .9vw); /*calc method calculates static size (px) + responsive size (vw) to determine min and max font-size*/
 	font-weight: bold;
-	color: #ffffff;
+	color: #000;
 	transition: 0.2s;
 }
 
@@ -417,7 +417,7 @@ a{
 
 .login-page {
 	height: 800px;
-  	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed; 
+  	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -430,7 +430,7 @@ a{
 }
 .register-page {
 	height: 1000px;
-	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed; 
+	background: url("tutor_landing_pic_reversed.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -587,7 +587,6 @@ form{
 .form2 .register-form {
  	display: none;
 }
-
 /*body {
   background: #76b852; /* fallback for old browsers don't use this you idiot lmfao
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
@@ -596,7 +595,5 @@ form{
   background: linear-gradient(to left, #76b852, #8DC26F); /*fuck this one honestly holy shit fuck
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale;
 }*/
-
-
