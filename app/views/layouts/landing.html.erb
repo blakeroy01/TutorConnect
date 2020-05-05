@@ -11,7 +11,6 @@
         <div class="landing-container">
             <div class="nav-container">
                 <!--<%= link_to image_tag("pepe.png"), root_path %>-->
-                <a href="landing.html.erb"><span class = "salmon-color">T</span><span class ="chalkboard-color">C</span></a>
                 <div class="nav-bar">
                     <div class="nav-contents">
                         <!--<a href="home.html">HOME</a>-->
@@ -24,11 +23,13 @@
             </div>
             <div class="banner">
                 <span class = "salmon-color">T</span>utor<span class ="chalkboard-color">C</span>onnect
-                <div class="download-app">
-                    <span class="chalkboard-color">SIGN</span>
-                    <span class ="salmon-color">UP</span>
-                    <span class ="salmon-color">NOW</span>
-                </div>
+                
+                <%= link_to "<div class=\"download-app\">
+                    <span class=\"chalkboard-color\">SIGN</span>
+                    <span class =\"chalkboard-color\">UP</span>
+                    <span class =\"salmon-color\">NOW</span>
+                    </div>".html_safe, "/register"%>
+                
             </div>
         </div>
     </div>
