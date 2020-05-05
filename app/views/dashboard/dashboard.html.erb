@@ -39,9 +39,9 @@
 							</div>
 							<div class="col-md-8">
 								<div class="chat-log-panel">
+									<%if @messaged_user%>
 									<h6 class = "card-header bg-white"><%= @messaged_user.username %></h6>
 									<ul id="messagebox" class="list-group list-group-flush overflow-auto" style = "height:400px;">
-										<%if @messaged_user%>
 											<% @messages.each do |message| %>
 											<% if (message.user_id != current_user.id) %>
 												<li class="list-group-item my-0 border-0">
