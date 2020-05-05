@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   #made
-  def index
-    @users = User.all
-  end
 
   def search
     @users = User.where("subject LIKE ?", "%" + params[:q] + "%")
@@ -13,7 +10,7 @@ class UsersController < ApplicationController
       @users = User.where(":cid = ANY(conversation_ids)")
     end
   end
-  
+
 
 
   def show
