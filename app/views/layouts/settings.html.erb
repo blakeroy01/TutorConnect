@@ -21,9 +21,7 @@
 				<div class = "card-body">
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-						<li class="list-group-item"><%= link_to "Homepage", '/dashboard' %></li>
-						<li class="list-group-item"><%= link_to "Show Profile", user_path(current_user) %></li>
-						<li class="list-group-item"><%= link_to "Delete Profile", delete_path(current_user) %></li>
+						<li class="list-group-item"><%= link_to "Delete Profile", delete_path(current_user), class:"text-danger" %></li>
 					</ul>
 				</div>
 			</div>

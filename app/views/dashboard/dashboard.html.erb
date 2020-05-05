@@ -27,7 +27,7 @@
 						<div class = "row">
 							<div class="chat-users-panel col-md-4">
 								<h6 class="card-header">Your Conversations</h6>
-								<ul class = "list-group list-group-flush text-truncate d-sm-none d-md-block">
+								<ul class = "list-group list-group-flush text-truncate d-sm-none d-md-block overflow-auto">
 									<%if @users_with_conversations%>
 										<% @users_with_conversations.each do |user| %>
 											<li class = "chat-user list-group-item d-flex justify-content-between align-items-center">
@@ -39,9 +39,9 @@
 							</div>
 							<div class="col-md-8">
 								<div class="chat-log-panel">
+									<%if @messaged_user%>
 									<h6 class = "card-header bg-white"><%= @messaged_user.username %></h6>
 									<ul id="messagebox" class="list-group list-group-flush overflow-auto" style = "height:400px;">
-										<%if @messaged_user%>
 											<% @messages.each do |message| %>
 											<% if (message.user_id != current_user.id) %>
 												<li class="list-group-item my-0 border-0">
