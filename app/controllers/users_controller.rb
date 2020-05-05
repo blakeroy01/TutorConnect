@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   #made
-  def index
-    @users = User.all
-  end
 
   def search
     @query = params[:q].capitalize   
@@ -14,8 +11,6 @@ class UsersController < ApplicationController
       @users = User.where(":cid = ANY(conversation_ids)")
     end
   end
-  
-
 
   def show
     @u = User.find(params[:id])

@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-		
+
 		<%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track' =>true  %>
 	</head>
 	<body class = "bg-creme">
@@ -29,7 +29,6 @@
                         	<p class="card-text">
                             	<%=@u.bio %>
                         	</p>
-
                         	<% if @u.is_tutor %>
                             	<h5 class= "card title text-center"> Subjects </h5>
 									<% @u.subject.each do |element| %>
@@ -40,10 +39,8 @@
                 	</div>
 				</div>
 
-				<div class = "col-12 col-md-8">	
+				<div class = "col-12 col-md-8">
 					<% if @u.id == current_user.id || (@u.conversation_ids & current_user.conversation_ids).length > 0%>
-						<% render 'dashboard/components/chat' %>
-					<% else %>
 						<div class = "card shadow py-2">
 							<h4 class="card-header">Chat with <%=@u.username %></h4>
 							<div class = "card-body">
@@ -74,21 +71,11 @@
 							</form>
 						</div>
 					</div>
-					<div class = "card shadow py-2 mt-2">
-						<h4 class="card-header">Rating</h4>
-						<div class="card-body">
-							<% if @u.rating_count != 0 %>
-								<p> Out of <%= @u.rating_count %> review, <%= @u.username %> got a <kbd class="kdb"><%= (@u.rating / @u.rating_count).to_f %></kbd> out of 5. </p>
-							<% else %>
-								<p> <%= @u.username %> has no reviews! </p>
-							<% end %>
-						</div>
-					</div>					
-					
+
+
 				</div>
 
 			</div>
-
 		</div>
 	</body>
 </html>
