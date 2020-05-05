@@ -27,7 +27,7 @@
 						<div class = "row">
 							<div class="chat-users-panel col-md-4">
 								<h6 class="card-header">Your Conversations</h6>
-								<ul class = "list-group list-group-flush text-truncate d-sm-none d-md-block">
+								<ul class = "list-group list-group-flush text-truncate d-sm-none d-md-block overflow-auto">
 									<%if @users_with_conversations%>
 										<% @users_with_conversations.each do |user| %>
 											<li class = "chat-user list-group-item d-flex justify-content-between align-items-center">
