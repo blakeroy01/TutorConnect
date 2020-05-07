@@ -12,7 +12,9 @@
 		<%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track' =>true  %>
 
 	</head>
-	<body class = "bg-creme">
+	
+        <%-# Kyle made this, the table was taken from the Bootstrap documentation and I modified it to match with our application. -%>
+        <body class = "bg-creme">
         <div class = "container-fullwidth">
             <%= render 'dashboard/components/dash_header.html.erb' %>
         </div>
@@ -23,9 +25,9 @@
 					<table id="searchResults" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th class="th-sm text-center" onclick="sortTable(0)">Username</th>
-								<th class="th-sm text-center" onclick="sortTable(1)">Subject</th>
-								<th class="th-sm text-center" onclick="sortTable(2)">Rating</th>
+								<th class="th-sm text-center">Username</th>
+								<th class="th-sm text-center">Subject</th>
+								<th class="th-sm text-center">Rating</th>
 							</tr>
 						</thead>
 						<tbody>
