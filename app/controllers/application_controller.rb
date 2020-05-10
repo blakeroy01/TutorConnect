@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def index(user_id: nil, conversation_id: nil)
     @users_with_conversations = []
-    current_user.conversation_ids.each do |id|
+    @current_user.conversation_ids.each do |id|
       user = User.where(" #{id} = ANY(conversation_ids)")
       if user.last.username == current_user.username
         @users_with_conversations << user.first
