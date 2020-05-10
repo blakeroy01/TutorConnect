@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :conversation_ids
   attribute :is_tutor, :boolean, default: false
   serialize :subject, Array
   has_secure_password
