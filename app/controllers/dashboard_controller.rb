@@ -16,7 +16,11 @@ class DashboardController < ApplicationController
     render 'dashboard/pre_index_tutor'
   end
 
-  # Kyle did this 
+  def refresh
+    index
+  end
+
+  # Kyle did this
   def update_bio_subjects
     current_user.update(bio: params[:bio], subject:split_subjects)
     render 'dashboard/dashboard'
