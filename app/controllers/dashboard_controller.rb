@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
     render 'dashboard/pre_index_tutor'
   end
 
+  # Kyle did this 
   def update_bio_subjects
     current_user.update(bio: params[:bio], subject:split_subjects)
     render 'dashboard/dashboard'
@@ -28,6 +29,7 @@ class DashboardController < ApplicationController
   end
 
 
+  # Kyle did this
   def split_subjects()
     if params[:subject]
       if params[:subject].length > 1

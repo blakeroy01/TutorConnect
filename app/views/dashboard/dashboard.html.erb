@@ -1,3 +1,6 @@
+<%-# The current user profile. This will show the user profile pic, their information, and the messages sent by other users that were sent
+	 to them. -%>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
@@ -59,6 +62,8 @@
 											<% end%>
 										<% end %>
 									</ul>
+
+									<%-# JS script to default the scrolling of the chat log to the bottom. -%>
 									<script>
 										var element = document.getElementById("messagebox");
 										element.scrollTop = element.scrollHeight;
