@@ -1,5 +1,3 @@
-# We all worked on this file
-
 Rails.application.routes.draw do
 	resources :layouts
 	resources :users
