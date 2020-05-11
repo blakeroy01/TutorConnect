@@ -1,8 +1,7 @@
-
 class UsersController < ApplicationController
-  #Kyle made this
+  #made
+
   def search
-    # Learned the search function from the link: http://www.korenlc.com/creating-a-simple-search-in-rails-4/
     @query = params[:q].titleize
     @users = User.where("subject LIKE ?", "%" + @query + "%")
   end
@@ -13,23 +12,21 @@ class UsersController < ApplicationController
     end
   end
 
-  # Kyle made this
   def show
     @u = User.find(params[:id])
     session[:tutor_id] = @u.id
   end
 
-  #Kyle made
+  #made
   def new
     @users = User.new(user_params)
   end
 
-  #Kyle made
+  #made
   def edit
     @users = User.find(params[:id])
   end
 
-  #Kyle made this
   def create
     @users = User.new(user_params)
     if @users.save
@@ -48,7 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
-  #Kyle made
+  #made
   def update
     @users = current_user
     if @users.update(user_params)
@@ -61,13 +58,13 @@ class UsersController < ApplicationController
     end
   end
 
-  #Kyle made
+  #made
   def destroy
     current_user.destroy
     redirect_to root_url
   end
 
-  #Kyle made
+  #made
   def addreview
     @u = User.find_by_id(session[:tutor_id])
     if params[:r]
@@ -83,8 +80,7 @@ class UsersController < ApplicationController
     end
   end
 
- 
-  # Blake made this
+
   private
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, :is_tutor, :bio, :subject)
