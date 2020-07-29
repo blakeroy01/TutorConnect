@@ -2,30 +2,13 @@
 
 LINK TO PROJECT! : https://tutorconnect418y.herokuapp.com/
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-This is our app
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
----
-Note: Merges are now protected.
+This is our Ruby on Rails Application TutorConnect
+Key Features built in this webapp include:
+-Postgresql database with database design
+-Login / Registration System
+-HTML pages with CSS design, Bootstrap included
+-Search functionality through the database with search bar UI
+-Editing user profile data
+-Messaging System built from scratch
+-Rating System
+-Logout
